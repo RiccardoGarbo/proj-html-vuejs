@@ -2,6 +2,7 @@
 
 export default {
     name: 'HorizontalList',
+    // Props definition for receiving data
     props: {
         title: String,
         address: String,

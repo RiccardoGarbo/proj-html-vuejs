@@ -9,8 +9,11 @@ export default {
 </script>
 
 <template>
+    <!-- Container for footer content -->
     <div id="footer-container">
+        <!-- component for footer menus -->
         <FooterMenus />
+        <!-- component for footer rights -->
         <FooterRights />
     </div>
 </template>

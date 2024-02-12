@@ -1,6 +1,7 @@
 <script>
 export default {
     name: 'HorizontalLinksMenu',
+    // Props definition for receiving data
     props: {
         title: String,
         items: Array,

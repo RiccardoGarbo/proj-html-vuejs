@@ -8,6 +8,7 @@ import FormComponent from './FormComponent.vue';
 export default {
     name: 'FooterMenus',
     components: { HorizontalList, HorizontalLinksMenu, FormComponent },
+    // Data properties initialized
     data() {
         return {
             footerAddresses: footerAddresses,

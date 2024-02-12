@@ -3,16 +3,20 @@ export default {
     name: 'FormComponent',
     data() {
         return {
+            // Initialize email and message data properties
             email: '',
             message: ''
         };
     },
     methods: {
+        // Method to handle form submission
         handleSubmit() {
+            // Trim whitespace from email and message inputs
             const formData = {
                 email: this.email.trim(),
                 message: this.message.trim()
             };
+            // Log the form data to the console
             console.log('Received data successfully:', formData);
         }
     }
@@ -21,13 +25,15 @@ export default {
 
 <template>
     <h2>NEWSLETTER</h2>
+    <!-- Form element with submit event handler -->
     <form @submit.prevent="handleSubmit">
-        <!-- Form content -->
+        <!-- Form inputs -->
+        <!-- Email input with v-model binding -->
         <input type="email" v-model="email" id="email" name="email" placeholder="Email" required><br><br>
-
+        <!-- Textarea input with v-model binding -->
         <textarea v-model="message" id="message" name="message" placeholder="Message" rows="4" cols="50"
             required></textarea>
-
+        <!-- Submit button -->
         <button type="submit">Invia</button>
     </form>
 </template>
@@ -39,21 +45,18 @@ h2 {
     color: white;
 }
 
-form {
+form input[type="email"],
+form textarea {
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid #333;
+    padding: 15px 25px;
+    background-color: transparent;
+    color: #ffff;
 
-    input[type="email"],
-    textarea {
-        width: 100%;
-        font-size: 1rem;
-        border: 1px solid #333;
-        padding: 15px 25px;
-        background-color: transparent;
-        color: #ffff;
-
-        &:focus {
-            outline: none;
-            caret-color: #ffff;
-        }
+    &:focus {
+        outline: none;
+        caret-color: #ffff;
     }
 }
 </style>
