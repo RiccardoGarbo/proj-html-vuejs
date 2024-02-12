@@ -3,10 +3,11 @@ import { footerAddresses, footerInfo, footerSupport } from '@/assets/data/data.j
 
 import HorizontalList from './HorizontalList.vue';
 import HorizontalLinksMenu from './HorizontalLinksMenu.vue';
+import FormComponent from './FormComponent.vue';
 
 export default {
     name: 'FooterMenus',
-    components: { HorizontalList, HorizontalLinksMenu },
+    components: { HorizontalList, HorizontalLinksMenu, FormComponent },
     data() {
         return {
             footerAddresses: footerAddresses,
@@ -32,16 +33,8 @@ export default {
 
                 <HorizontalLinksMenu :title="footerSupport.title" :items="footerSupport.items" />
             </div>
-            <div class="col">
-                <form>
-                    <!-- Form content -->
-                    <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required><br><br>
-
-                    <textarea id="message" name="message" placeholder="Inserisci il tuo messaggio" rows="4" cols="50"
-                        required></textarea><br><br>
-
-                    <button type="submit">Invia</button>
-                </form>
+            <div class="col-form">
+                <FormComponent />
             </div>
         </div>
     </div>
@@ -65,6 +58,10 @@ export default {
         .col {
             flex: 1;
             margin: 0 50px;
+        }
+
+        .col-form {
+            margin-right: 50px;
         }
     }
 }
