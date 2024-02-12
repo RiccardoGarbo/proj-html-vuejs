@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div id="menu">
         <h2>{{ title.toUpperCase() }}</h2>
         <ul>
             <li v-for="(item, i) in items" :key="i">

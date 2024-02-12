@@ -55,11 +55,10 @@ export default {
 
 #footer-menus {
     min-height: 350px;
-    border: 2px dotted white;
     color: $gray-cs;
     line-height: 1.50rem;
     letter-spacing: 2px;
-    padding: 20px;
+    padding: 60px 20px;
 
 
 

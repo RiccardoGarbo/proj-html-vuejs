@@ -11,13 +11,14 @@ export default {
 </template>
 
 
-<style scoped>
+<style lang="scss" scoped>
+@use '@/assets/scss/_vars.scss' as *;
+
 #footer-rights {
     padding: 15px 0 15px 0;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-top: 1px solid $gray-cs;
 
-    color: gray;
+    color: $gray-cs;
     text-align: center;
     line-height: 3rem;
     font-size: 1rem;
