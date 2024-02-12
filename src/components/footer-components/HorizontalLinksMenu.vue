@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <div id="menu">
+    <div>
         <h2>{{ title.toUpperCase() }}</h2>
         <ul>
             <li v-for="(item, i) in items" :key="i">
@@ -25,12 +25,12 @@ export default {
 
 h2 {
     font-size: 1.60rem;
-    margin: 30px 0;
+    margin-bottom: 30px;
     color: white;
 }
 
 p {
-    margin: 8px 0;
+    margin-top: 10px;
 }
 
 a {

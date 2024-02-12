@@ -34,12 +34,12 @@ export default {
 
 h2 {
     font-size: 1.60rem;
-    margin: 30px 0;
+    margin-bottom: 30px;
     color: white;
 }
 
 p {
-    margin: 8px 0;
+    margin-top: 10px;
 }
 
 a {

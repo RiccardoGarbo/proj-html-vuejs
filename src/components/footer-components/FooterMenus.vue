@@ -35,10 +35,8 @@ export default {
             <div class="col">
                 <form>
                     <!-- Form content -->
-                    <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required><br><br>
 
-                    <label for="message">Messaggio:</label>
                     <textarea id="message" name="message" placeholder="Inserisci il tuo messaggio" rows="4" cols="50"
                         required></textarea><br><br>
 
@@ -54,23 +52,19 @@ export default {
 @use '@/assets/scss/_vars.scss' as *;
 
 #footer-menus {
-    min-height: 350px;
+    height: 400px;
     color: $gray-cs;
-    line-height: 1.50rem;
     letter-spacing: 2px;
     padding: 60px 20px;
 
-
-
     .row {
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-wrap: wrap;
+        margin: 0 -50px;
 
         .col {
             flex: 1;
-            margin: 0 10px;
+            margin: 0 50px;
         }
     }
 }
