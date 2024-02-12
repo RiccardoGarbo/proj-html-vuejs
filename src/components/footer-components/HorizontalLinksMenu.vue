@@ -1,30 +1,20 @@
 <script>
-
 export default {
-    name: 'HorizontalList',
+    name: 'HorizontalLinksMenu',
     props: {
-        title: String,
-        address: String,
-        number: String,
-        email: String
-
+        items: Array,
     }
 };
 </script>
 
 <template>
     <ul>
-        <li>
-            <p>{{ address }}</p>
-        </li>
-        <li>
-            <p>T: {{ number }}</p>
-        </li>
-        <li>
-            <p>Email: <a href="#">{{ email }}</a></p>
+        <li v-for="(item, i) in items" :key="i">
+            <p><a :href="item.href">{{ item.text }}</a></p>
         </li>
     </ul>
 </template>
+
 
 <style scoped lang="scss">
 @use '@/assets/scss/_vars.scss' as *;
@@ -43,7 +33,3 @@ a {
     }
 }
 </style>
-
-
-
-

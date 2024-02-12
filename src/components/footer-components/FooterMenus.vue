@@ -2,10 +2,12 @@
 import { footerAddresses, footerInfo, footerSupport } from '@/assets/data/data.js';
 
 import HorizontalList from './HorizontalList.vue';
+import HorizontalLinksMenu from './HorizontalLinksMenu.vue';
+
 
 export default {
     name: 'FooterMenus',
-    components: { HorizontalList, },
+    components: { HorizontalList, HorizontalLinksMenu },
     data() {
         return {
             footerAddresses: footerAddresses,
@@ -20,28 +22,18 @@ export default {
     <div id="footer-menus">
         <div class="row">
             <div class="col">
-                <HorizontalList :title="footerAddresses.title" :address="footerAddresses.address"
-                    :number="footerAddresses.number" :email="footerAddresses.email" />
+                <h2>{{ footerAddresses.title.toUpperCase() }}</h2>
+                <HorizontalList :address="footerAddresses.address" :number="footerAddresses.number"
+                    :email="footerAddresses.email" />
             </div>
             <div class="col">
-                <h3>Bookings</h3>
-                <ul>
-                    <li>Url</li>
-                    <li>Url</li>
-                    <li>Url</li>
-                    <li>Url</li>
-                    <li>Url</li>
-                </ul>
+                <h2>{{ footerInfo.title.toUpperCase() }}</h2>
+                <HorizontalLinksMenu :items="footerInfo.items" />
             </div>
             <div class="col">
-                <h3>Bookings</h3>
-                <ul>
-                    <li>Url</li>
-                    <li>Url</li>
-                    <li>Url</li>
-                    <li>Url</li>
-                    <li>Url</li>
-                </ul>
+                <h2>{{ footerSupport.title.toUpperCase() }}</h2>
+                <HorizontalLinksMenu :items="footerSupport.items" />
+
             </div>
             <div class="col">
                 <h3>Bookings</h3>
@@ -70,23 +62,34 @@ export default {
     </div>
 </template>
 
-<style scoped>
+
+<style lang="scss" scoped>
+@use '@/assets/scss/_vars.scss' as *;
+
 #footer-menus {
-    min-height: 300px;
+    min-height: 350px;
     border: 2px dotted white;
-    color: white;
+    color: $gray-cs;
+    line-height: 1.50rem;
+    letter-spacing: 2px;
     padding: 20px;
-}
 
+    h2 {
+        font-size: 1.60rem;
+        margin: 30px 0;
+        color: white;
+    }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
 
-.col {
-    flex: 1;
-    margin: 0 10px;
-    /* Aggiungi margine tra le colonne */
+        .col {
+            flex: 1;
+            margin: 0 10px;
+        }
+    }
 }
 </style>

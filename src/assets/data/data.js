@@ -153,48 +153,56 @@ const footerAddresses = {
     number: '1 123-456-789',
     email: 'demo@example.com'
 }
-const footerInfo = [
-    {
-        href: '#',
-        text: 'Product Support'
-    },
-    {
-        href: '#',
-        text: 'Checkout'
-    },
-    {
-        href: '#',
-        text: 'Report Abuse'
-    },
-    {
-        href: '#',
-        text: 'Reedem Voucher'
-    },
-    {
-        href: '#',
-        text: 'Order Status'
-    },
-]
-const footerSupport = [
-    {
-        href: '#',
-        text: 'Policies & Rules'
-    },
-    {
-        href: '#',
-        text: 'Privacy Policy'
-    },
-    {
-        href: '#',
-        text: 'License Policy'
-    },
-    {
-        href: '#',
-        text: 'My Account'
-    },
-    {
-        href: '#',
-        text: 'Locality'
-    },
-]
+const footerInfo = {
+    title: 'Information',
+    items: [
+        {
+            href: '#',
+            text: 'Product Support'
+        },
+        {
+            href: '#',
+            text: 'Checkout'
+        },
+        {
+            href: '#',
+            text: 'Report Abuse'
+        },
+        {
+            href: '#',
+            text: 'Reedem Voucher'
+        },
+        {
+            href: '#',
+            text: 'Order Status'
+        }
+    ]
+};
+
+const footerSupport = {
+    title: 'Support',
+    items: [
+        {
+            href: '#',
+            text: 'Policies & Rules'
+        },
+        {
+            href: '#',
+            text: 'Privacy Policy'
+        },
+        {
+            href: '#',
+            text: 'License Policy'
+        },
+        {
+            href: '#',
+            text: 'My Account'
+        },
+        {
+            href: '#',
+            text: 'Locality'
+        }
+    ]
+};
+
 export { headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport }
