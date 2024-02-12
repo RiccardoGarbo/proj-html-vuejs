@@ -30,7 +30,8 @@ export default {
     </header>
 
     <figure id="jumbotron">
-        <img src="../assets/img/jumbotron img/image.png" alt="">
+        <img src="../assets/img/jumbotron img/image.png" alt="jumbotron">
+        <p>ciao</p>
     </figure>
 </template>
 
