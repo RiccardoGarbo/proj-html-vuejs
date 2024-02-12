@@ -1,38 +1,28 @@
 <script>
-import { footerAddresses, footerInfo, footerSupport } from '@/assets/data/data.js';
 import FooterRights from './footer-components/FooterRights.vue';
+import FooterMenus from './footer-components/FooterMenus.vue';
 
 export default {
     name: "AppFooter",
-    components: { FooterRights, },
-    data() {
-        return {
-            footerAddresses: footerAddresses,
-            footerInfo: footerInfo,
-            footerSupport: footerSupport
-        };
-    }
+    components: { FooterRights, FooterMenus },
 };
 </script>
 
 <template>
     <div id="footer-container">
-        <div id="footer-menus"></div>
+        <FooterMenus />
         <FooterRights />
     </div>
 </template>
 
-<style scoped >
+<style>
 #footer-container {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-
-
-#footer-menus {
-    min-height: 300px;
-    border: 2px dotted white;
-
+/* Generics */
+ul {
+    list-style: none;
 }
 </style>

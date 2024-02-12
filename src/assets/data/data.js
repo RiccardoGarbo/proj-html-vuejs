@@ -148,6 +148,7 @@ const instagramImages = [
     }
 ]
 const footerAddresses = {
+    title: 'Bookings',
     address: '502 New Design Str, Melbourne, San Francisco, CA 94110, United States Of America​ Australia',
     number: '1 123-456-789',
     email: 'demo@example.com'
