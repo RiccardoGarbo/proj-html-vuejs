@@ -4,7 +4,6 @@ import { footerAddresses, footerInfo, footerSupport } from '@/assets/data/data.j
 import HorizontalList from './HorizontalList.vue';
 import HorizontalLinksMenu from './HorizontalLinksMenu.vue';
 
-
 export default {
     name: 'FooterMenus',
     components: { HorizontalList, HorizontalLinksMenu },
@@ -22,28 +21,16 @@ export default {
     <div id="footer-menus">
         <div class="row">
             <div class="col">
-                <h2>{{ footerAddresses.title.toUpperCase() }}</h2>
-                <HorizontalList :address="footerAddresses.address" :number="footerAddresses.number"
-                    :email="footerAddresses.email" />
+                <HorizontalList :title="footerAddresses.title" :address="footerAddresses.address"
+                    :number="footerAddresses.number" :email="footerAddresses.email" />
             </div>
             <div class="col">
-                <h2>{{ footerInfo.title.toUpperCase() }}</h2>
-                <HorizontalLinksMenu :items="footerInfo.items" />
-            </div>
-            <div class="col">
-                <h2>{{ footerSupport.title.toUpperCase() }}</h2>
-                <HorizontalLinksMenu :items="footerSupport.items" />
 
+                <HorizontalLinksMenu :title="footerInfo.title" :items="footerInfo.items" />
             </div>
             <div class="col">
-                <h3>Bookings</h3>
-                <ul>
-                    <li>Url</li>
-                    <li>Url</li>
-                    <li>Url</li>
-                    <li>Url</li>
-                    <li>UrlS</li>
-                </ul>
+
+                <HorizontalLinksMenu :title="footerSupport.title" :items="footerSupport.items" />
             </div>
             <div class="col">
                 <form>
@@ -74,11 +61,7 @@ export default {
     letter-spacing: 2px;
     padding: 20px;
 
-    h2 {
-        font-size: 1.60rem;
-        margin: 30px 0;
-        color: white;
-    }
+
 
     .row {
         display: flex;
