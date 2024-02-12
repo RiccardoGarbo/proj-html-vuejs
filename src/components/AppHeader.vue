@@ -24,6 +24,12 @@ export default {
                 },
             ]
         }
+    },
+    methods: {
+        imagePath(element) {
+            const path = new URL(`../assets/img/icon/${element}.svg`, import.meta.url);
+            return path.href
+        },
     }
 };
 </script>
@@ -54,23 +60,15 @@ export default {
             <p>Music in this video</p>
             <button type="button" class="main-btn">Read more</button>
         </div>
+        <div class="arrow-container left-arrow"><img src="../assets/img/left-arrow.svg" alt="left-arrow" class="arrow"></div>
+        <div class="arrow-container right-arrow"><img src="../assets/img/right-arrow.svg" alt="right-arrow" class="arrow"></div>
     </figure>
 
-    <div id="card-container" class="container">
-        <div class="black-card">
-            <img src="../assets/img/icon/speaker.svg" alt="speaker" class="icons">
-            <h2>Original Ideas</h2>
-            <p>Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Random Text.</p>
-        </div>
-        <div class="black-card">
-            <img src="../assets/img/icon/disc.svg" alt="disc" class="icons">
-            <h2>Music Studio</h2>
-            <p>Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Random Text.</p>
-        </div>
-        <div class="black-card">
-            <img src="../assets/img/icon/headphones.svg" alt="headphones" class="icons">
-            <h2>Acoustic covers</h2>
-            <p>Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Random Text.</p>
+    <div id="card-container" class="container" >
+        <div class="black-card" v-for="card in cards">
+            <img :src="imagePath(card.img)" :alt="card.img" class="icons">
+            <h2>{{ card.heading }}</h2>
+            <p>{{ card.text }}</p>
         </div>
     </div>
 
@@ -132,9 +130,42 @@ header {
     position: relative;
     text-align: center;
 
+    &:hover .arrow-container {
+        opacity: 1;
+    }
+
 
     img {
         width: 100%;
+    }
+
+    .arrow-container {
+        
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 45%;
+        padding: 13px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $black-cs;
+        }
+    }
+
+    .left-arrow {
+        left: 50px;
+    }
+
+    .right-arrow {
+        right: 50px;
+    }
+
+    .arrow {
+        width: 7px;
     }
 
     #jumbo-text {
