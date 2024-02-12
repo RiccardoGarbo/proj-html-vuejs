@@ -6,7 +6,8 @@ export default {
 
 <template>
     <div id="footer-rights">
-        <p>© 2024 All Rights Reserved. Developed By TemplateMela</p>
+        <p>© 2024 All Rights Reserved. Developed By The Boolean Guys with Blood and Tears &hearts;</p>
+
     </div>
 </template>
 
