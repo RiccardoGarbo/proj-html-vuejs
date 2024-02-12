@@ -62,7 +62,7 @@ export default {
         }
 
         .col-form {
-            margin-right: 50px;
+            flex: 2;
         }
     }
 }

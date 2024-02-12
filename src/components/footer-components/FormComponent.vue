@@ -29,7 +29,7 @@ export default {
     <form @submit.prevent="handleSubmit">
         <!-- Form inputs -->
         <!-- Email input with v-model binding -->
-        <input type="email" v-model="email" id="email" name="email" placeholder="Email" required><br><br>
+        <input type="email" v-model="email" id="email" name="email" placeholder="Email" required>
         <!-- Textarea input with v-model binding -->
         <textarea v-model="message" id="message" name="message" placeholder="Message" rows="4" cols="50"
             required></textarea>
@@ -51,6 +51,7 @@ form textarea {
     font-size: 1rem;
     border: 1px solid #333;
     padding: 15px 25px;
+    margin-bottom: 20px;
     background-color: transparent;
     color: #ffff;
 
