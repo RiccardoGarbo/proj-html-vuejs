@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/oswald": "^5.0.18",
     "scss": "^0.2.4",
     "vue": "^3.4.15"
   },
