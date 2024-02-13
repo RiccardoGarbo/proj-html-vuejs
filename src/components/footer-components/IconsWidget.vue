@@ -1,10 +1,22 @@
+//TODO: Fix visualization icons
 <script>
 export default {
     name: 'IconsWidget',
     data() {
         return {
-            imageUrl: '@/assets/img/image (17).svg'
+            images: [
+                { filename: 'image(17).svg', alt: 'icon 1' },
+                { filename: 'image(18).svg', alt: 'icon 2' },
+                { filename: 'image(19).svg', alt: 'icon 3' },
+                { filename: 'image(20).svg', alt: 'icon 4' }
+            ]
         };
+    },
+    methods: {
+        getImagePath(filename) {
+            const basePath = '@/assets/img/';
+            return `${basePath}${filename}`;
+        }
     }
 };
 </script>
@@ -12,10 +24,9 @@ export default {
 <template>
     <div id="widget-icon">
         <ul>
-            <li><a href="#">icon</a></li>
-            <li><a href="#">icon</a></li>
-            <li><a href="#">icon</a></li>
-            <li><a href="#">icon</a></li>
+            <li v-for="(image, i) in images" :key="i">
+                <a href="#"><img :src="getImagePath(image.filename)" :alt="image.alt"></a>
+            </li>
         </ul>
     </div>
 </template>
