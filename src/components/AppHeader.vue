@@ -49,7 +49,7 @@ export default {
 
         <div id="right-header">
             <HeaderNavbar/>
-            <HeaderSearchbar/>
+            <HeaderSearchbar />
         </div>
     </header>
 

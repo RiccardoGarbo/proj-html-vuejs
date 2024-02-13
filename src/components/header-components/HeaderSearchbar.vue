@@ -3,14 +3,17 @@ export default {
   name: 'HeaderSearchbar',
   data() {
     return {
-      isShown: false
+      isShown: false,
+      searchedText: ''
     }
   },
   methods: {
     setOverlay() {
       this.isShown = this.isShown ? false : true
     },
-
+    deleteText() {
+      this.searchedText = ''
+    }
   }
 }
 </script>
@@ -20,8 +23,9 @@ export default {
   <div id="overlay" v-if="isShown">
     <img src="../../assets/img/image (22).svg" alt="close" id="close-button" @click="setOverlay">
     <div id="searchbar">
-      <input type="text" placeholder="search ...">
+      <input type="text" placeholder="search ..." v-model="searchedText">
       <img src="../../assets/img/image (23).svg" class="searchbar-icon">
+      <img v-if="searchedText" src="../../assets/img/image (22).svg" alt="delete" class="delete-text" @click="deleteText">
     </div>
   </div>
 </template>
@@ -114,6 +118,12 @@ export default {
     &::placeholder {
       color: rgba(194, 194, 194, 0.295);
     }
+  }
+  .delete-text {
+    filter: invert(41%) sepia(6%) saturate(5486%) hue-rotate(180deg) brightness(89%) contrast(89%);
+    position: absolute;
+    right: 70px;
+    height: 20px;
   }
 }
 
