@@ -1,33 +1,126 @@
 const headerNav = [
     {
         title: 'home',
-        url: '#'
+        url: '#',
+        active: true,
+        sublist: null
     },
     {
         title: 'blog',
-        url: '#'
+        url: '#',
+        active: false,
+        sublist: null
     },
     {
         title: 'events',
-        list: ['Choral music', 'concert band', 'opera concerts', 'symphony orchestra', 'family concerts']
+        sublist: [
+            {
+                label: 'Choral music',
+                list: null
+            },
+            {
+                label: 'concert band',
+                list: null
+            },
+            {
+                label: 'opera concerts',
+                list: null
+            },
+            {
+                label: 'symphony orchestra',
+                list: null
+            },
+            {
+                label: 'family concerts',
+                list: null
+            }
+        ],
+        active: false,
+        url: '#'
     },
     {
         title: 'gallery',
-        url: '#'
+        url: '#',
+        active: false,
+        sublist: null
     },
     {
         title: 'about us',
-        url: '#'
+        url: '#',
+        active: false,
+        sublist: null
     },
     {
         title: 'contact us',
-        url: '#'
+        url: '#',
+        active: false,
+        sublist: null
     },
     {
         title: 'shop',
         url: '#',
-        list: ['product type', 'shop page']
+        sublist: [ 
+            {
+                label: 'product type',
+                list: [
+                    {
+                        text: 'simple product'
+                    },
+                    {
+                        text: 'external/affiliate product'
+                    },
+                    {
+                        text: 'downloadable product'
+                    },
+                    {
+                        text: 'group product'
+                    },
+                    {
+                        text: 'in-stock product'
+                    },
+                    {
+                        text: 'variable product'
+                    },
+                ]
+            },
+            {
+                label: 'shop page',
+                list: [
+                    {
+                        text: 'checkout'
+                    },
+                    {
+                        text: 'cart'
+                    },
+                    {
+                        text: 'downloads'
+                    },
+                    {
+                        text: 'my account'
+                    },
+                ]
+            }
+        ],
+        active: false
     }
+]
+
+const headerCards = [
+    {
+        img: 'speaker',
+        heading: 'Original ideas',
+        text: 'Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Random Text.'
+    },
+    {
+        img: 'disc',
+        heading: 'Music Studio',
+        text: 'Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Random Text.'
+    },
+    {
+        img: 'headphones',
+        heading: 'Acoustic covers',
+        text: 'Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Random Text.'
+    },
 ]
 const gallery = [
     {
@@ -196,4 +289,4 @@ const footerSupport = [
         text: 'Locality'
     },
 ]
-export { headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport }
+export { headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport, headerCards }

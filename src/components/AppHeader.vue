@@ -1,28 +1,12 @@
 <script>
-import { headerNav } from '../assets/data/data'
+import { headerNav, headerCards } from '../assets/data/data'
 
 export default {
     name: "AppHeader",
     data() {
         return {
             headerNav,
-            headerCards: [
-                {
-                    img: 'speaker',
-                    heading: 'Original ideas',
-                    text: 'Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Random Text.'
-                },
-                {
-                    img: 'disc',
-                    heading: 'Music Studio',
-                    text: 'Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Random Text.'
-                },
-                {
-                    img: 'headphones',
-                    heading: 'Acoustic covers',
-                    text: 'Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Random Text.'
-                },
-            ],
+            headerCards,
             currentImage: 0,
             autoplay: null
         }
@@ -38,7 +22,7 @@ export default {
         changeImage() {
             clearInterval(this.autoplay);
             this.changeIndex()
-            this.autoplay()
+            this.startAutoplay()
         },
         startAutoplay() {
             this.autoplay = setInterval(()=> {
