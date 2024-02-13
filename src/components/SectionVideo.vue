@@ -35,50 +35,51 @@ export default {
     margin: 0 auto;
 }
 
- h5{
-    color: #f2870c;
-    text-align: center;
- }
+h5{
+color: #f2870c;
+text-align: center;
+}
 
- h2, 
- p {
-    color: #ffffff;
-    text-align: center;
- }
+h2, 
+p {
+color: #ffffff;
+text-align: center;
+}
 
 
 
- button{
-    padding: 10px 50px;
-    background-color: transparent;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    margin-top: 30px;
- }
+button{
+padding: 10px 50px;
+background-color: transparent;
+color: #ffffff;
+border: 1px solid #f2870c;
+margin-top: 30px;
+}
 
- button:hover{
-    background-color: #f2870c;
- }
+button:hover{
+background-color: #f2870c;
+}
 
- #video{
-    height: 600px;
-    background-image: url(../assets/img/Video-600x211.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
+#video{
+height: 600px;
+background-image: url(../assets/img/Video-600x211.jpg);
+background-repeat: no-repeat;
+background-size: contain;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 20px;
 
-    h2{
-        font-size: 32px;
-    }
+}
+h2{
+    font-size: 60px;
 }
 
 .fa-circle-play{
-    font-size: 60px;
+    font-size: 80px;
     color: #f2870c;
+    font-weight: 100;
 }
 
 
