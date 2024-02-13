@@ -34,11 +34,13 @@ export default {
         <textarea v-model="message" id="message" name="message" placeholder="Message" rows="4" cols="50"
             required></textarea>
         <!-- Submit button -->
-        <button type="submit">Invia</button>
+        <button type="submit">SEND MESSAGE</button>
     </form>
 </template>
 
 <style scoped lang="scss">
+@use '@/assets/scss/_vars.scss' as *;
+
 h2 {
     font-size: 1.60rem;
     margin-bottom: 30px;
@@ -51,7 +53,7 @@ form textarea {
     font-size: 1rem;
     border: 1px solid #333;
     padding: 15px 25px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     background-color: transparent;
     color: #ffff;
 
@@ -59,5 +61,24 @@ form textarea {
         outline: none;
         caret-color: #ffff;
     }
+}
+
+form button[type="submit"] {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    border-radius: 0px;
+    padding: 12px 54px 12px 54px;
+    border: 1px solid $orange-cs;
+    background-color: transparent;
+    color: $white-cs;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: $orange-cs;
+    color: white;
 }
 </style>

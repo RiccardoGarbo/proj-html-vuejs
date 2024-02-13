@@ -4,10 +4,11 @@ import { footerAddresses, footerInfo, footerSupport } from '@/assets/data/data.j
 import HorizontalList from './HorizontalList.vue';
 import HorizontalLinksMenu from './HorizontalLinksMenu.vue';
 import FormComponent from './FormComponent.vue';
+import IconsWidget from './IconsWidget.vue'
 
 export default {
     name: 'FooterMenus',
-    components: { HorizontalList, HorizontalLinksMenu, FormComponent },
+    components: { HorizontalList, HorizontalLinksMenu, FormComponent, IconsWidget },
     // Data properties initialized
     data() {
         return {
@@ -25,18 +26,18 @@ export default {
             <div class="col">
                 <HorizontalList :title="footerAddresses.title" :address="footerAddresses.address"
                     :number="footerAddresses.number" :email="footerAddresses.email" />
+                <IconsWidget />
             </div>
             <div class="col">
-
                 <HorizontalLinksMenu :title="footerInfo.title" :items="footerInfo.items" />
             </div>
             <div class="col">
-
                 <HorizontalLinksMenu :title="footerSupport.title" :items="footerSupport.items" />
             </div>
             <div class="col-form">
                 <FormComponent />
             </div>
+
         </div>
     </div>
 </template>
@@ -50,6 +51,7 @@ export default {
     color: $gray-cs;
     letter-spacing: 2px;
     padding: 60px 20px;
+    margin: 40px 0;
 
     .row {
         display: flex;
@@ -64,6 +66,9 @@ export default {
         .col-form {
             flex: 2;
         }
+
+
     }
+
 }
 </style>
