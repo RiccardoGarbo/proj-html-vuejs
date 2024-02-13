@@ -25,7 +25,7 @@ export default {
             this.startAutoplay()
         },
         startAutoplay() {
-            this.autoplay = setInterval(()=> {
+            this.autoplay = setInterval(() => {
                 this.changeIndex()
             }, 4000)
         }
@@ -70,12 +70,14 @@ export default {
             </transition>
             <button type="button" class="main-btn">Read more</button>
         </div>
-        <div class="arrow-container left-arrow" @click="changeImage"><img src="../assets/img/left-arrow.svg" alt="left-arrow" class="arrow"></div>
-        <div class="arrow-container right-arrow" @click="changeImage"><img src="../assets/img/right-arrow.svg" alt="right-arrow" class="arrow"></div>
+        <div class="arrow-container left-arrow" @click="changeImage"><img src="../assets/img/left-arrow.svg"
+                alt="left-arrow" class="arrow"></div>
+        <div class="arrow-container right-arrow" @click="changeImage"><img src="../assets/img/right-arrow.svg"
+                alt="right-arrow" class="arrow"></div>
     </figure>
 
 
-    <div id="card-container" class="container" >
+    <div id="card-container" class="container">
         <!-- fare un altro component anche di questo -->
         <div class="black-card" v-for="card in headerCards">
             <img :src="imagePath(card.img)" :alt="card.img" class="icons">
@@ -83,7 +85,6 @@ export default {
             <p>{{ card.text }}</p>
         </div>
     </div>
-
 </template>
 
 <style lang="scss" scoped >
@@ -156,7 +157,8 @@ header {
         transition: opacity .5s ease-in;
     }
 
-    .fade-enter, .fade-leave-to {
+    .fade-enter,
+    .fade-leave-to {
         opacity: .5;
     }
 
@@ -165,7 +167,7 @@ header {
     }
 
     .arrow-container {
-        
+
         position: absolute;
         background-color: rgba(0, 0, 0, 0.5);
         top: 45%;
@@ -232,7 +234,7 @@ header {
             }
         }
 
-    }  
+    }
 }
 
 .container {
@@ -247,8 +249,8 @@ header {
     justify-content: center;
     transform: translateY(-180px);
 
-        .black-card {
-        background-color: #121212 ;
+    .black-card {
+        background-color: #121212;
         text-align: center;
         justify-content: space-between;
         padding: 5rem 3rem;
@@ -256,29 +258,28 @@ header {
         flex-basis: calc(100% /3);
 
 
-            h2 {
-                font-size: 24px;
-                font-weight: 500;
-                margin-bottom: .8rem;
-            }
-            .icons {
-                height: 106px;
-                filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(91deg) brightness(103%) contrast(101%);
-                margin-bottom: 2rem;
-            }
+        h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: .8rem;
+        }
 
-            p {
-                font-family: OpenSans, sans-serif;
-                font-size: 15px;
-                font-weight: normal;
-                text-transform: capitalize;
-            }
+        .icons {
+            height: 106px;
+            filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(91deg) brightness(103%) contrast(101%);
+            margin-bottom: 2rem;
+        }
 
-
+        p {
+            font-family: OpenSans, sans-serif;
+            font-size: 15px;
+            font-weight: normal;
+            text-transform: capitalize;
         }
 
 
+    }
+
+
 }
-
-
 </style>
