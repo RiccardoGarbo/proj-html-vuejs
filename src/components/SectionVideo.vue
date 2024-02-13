@@ -1,8 +1,8 @@
 <script>
-import BaseCarousel from './BaseCarousel.vue' 
+
 export default {
     name: "SectionVideo",
-    components: {BaseCarousel}
+   
 };
 </script>
 
@@ -21,10 +21,7 @@ export default {
         <font-awesome-icon :icon="'far fa-circle-play'" />
         <h2>NEW MUSIC VIDEO</h2>
     </section> 
-    <section>
-        <BaseCarousel />
-    </section>
-
+    
 
    
 </template>
