@@ -19,6 +19,8 @@ export default {
         <font-awesome-icon :icon="'far fa-circle-play'" />
         <h2>NEW MUSIC VIDEO</h2>
     </section>    
+
+   
 </template>
 
 <style lang="scss" scoped >
