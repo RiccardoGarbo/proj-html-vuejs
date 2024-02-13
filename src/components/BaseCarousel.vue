@@ -5,6 +5,5 @@ export default {
 </script>
 
 <template>
-    <BaseCarousel>
-    </BaseCarousel>
+    
 </template>
