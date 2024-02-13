@@ -16,7 +16,7 @@ export default {
         <button>READ MORE</button>
     </section>
     <section id="video">
-        <!-- <font-awesome-icon :icon="['far', 'circle-play']" /> -->
+        <font-awesome-icon :icon="'far fa-circle-play'" />
         <h2>NEW MUSIC VIDEO</h2>
     </section>    
 </template>
@@ -49,9 +49,13 @@ export default {
  button{
     padding: 10px 50px;
     background-color: transparent;
-    border: 1px solid #f2870c;
+    border: 1px solid #ffffff;
     color: #ffffff;
     margin-top: 30px;
+ }
+
+ button:hover{
+    background-color: #f2870c;
  }
 
  #video{
@@ -59,5 +63,21 @@ export default {
     background-image: url(../assets/img/Video-600x211.jpg);
     background-repeat: no-repeat;
     background-size: contain;
- }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    h2{
+        font-size: 32px;
+    }
+}
+
+.fa-circle-play{
+    font-size: 60px;
+    color: #f2870c;
+}
+
+
 </style>
