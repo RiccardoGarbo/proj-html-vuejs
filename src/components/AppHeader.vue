@@ -54,7 +54,7 @@ export default {
     </header>
 
     <!-- jumbotron -->
-    <HeaderJumbotron @on-arrow-click="changeIndex" :index="currentImage"/>
+    <HeaderJumbotron @on-arrow-click="changeImage" :index="currentImage"/>
 
     <!-- cards -->
     <div id="card-container" class="container">

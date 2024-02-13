@@ -30,6 +30,7 @@ export default {
                 <span>
                     <img src="../../assets/img/image (7).svg" v-if="link.sublist" alt="arrow-down" class="arrow-down">
                 </span>
+                <!-- sottolista -->
                 <ul class="sublist" v-show="hoveredSublist === link.sublist">
                     <li v-for="(sublink, i) in link.sublist" :key="i">
                         <a href="#">{{ sublink.label }}</a>
