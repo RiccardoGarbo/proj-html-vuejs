@@ -1,5 +1,9 @@
 <script>
 import { headerNav, headerCards } from '../assets/data/data'
+import HeaderNavbar from './header-components/HeaderNavbar.vue';
+import HeaderSearchbar from './header-components/HeaderSearchbar.vue';
+import HeaderLogo from './header-components/HeaderLogo.vue';
+import HeaderCard from './header-components/HeaderCard.vue';
 
 export default {
     name: "AppHeader",
@@ -11,6 +15,7 @@ export default {
             autoplay: null
         }
     },
+    components: {HeaderNavbar, HeaderSearchbar, HeaderLogo, HeaderCard},
     methods: {
         imagePath(element) {
             const path = new URL(`../assets/img/icon/${element}.svg`, import.meta.url);
@@ -38,21 +43,11 @@ export default {
 
 <template>
     <header>
-        <figure>
-            <img src="../assets/img/Logo.png" alt="logo">
-        </figure>
+        <HeaderLogo/>
+
         <div id="right-header">
-
-            <nav>
-                <!-- fare la classe active nei data, fare un altro component di questo e importare lì i data -->
-                <ul>
-                    <li v-for="(link, i) in headerNav" :key="i"><a :href="link.url" :class="{ active: i === 0 }">{{
-                        link.title }}</a></li>
-                </ul>
-            </nav>
-
-            <!-- fare un altro component anche di questo, l'immagine non si vede -->
-            <div id="search-icon"><img src="../assets/img/image (8).svg" alt="lente"></div>
+            <HeaderNavbar/>
+            <HeaderSearchbar/>
         </div>
     </header>
 
@@ -78,12 +73,7 @@ export default {
 
 
     <div id="card-container" class="container">
-        <!-- fare un altro component anche di questo -->
-        <div class="black-card" v-for="card in headerCards">
-            <img :src="imagePath(card.img)" :alt="card.img" class="icons">
-            <h2>{{ card.heading }}</h2>
-            <p>{{ card.text }}</p>
-        </div>
+        <HeaderCard v-for="(card, i) in headerCards" :key="i" :card="card"/>
     </div>
 </template>
 
@@ -91,7 +81,6 @@ export default {
 @use '../assets/scss/vars' as *;
 
 * {
-    //da mettere nel body
     color: white;
     text-transform: uppercase;
 }
@@ -108,29 +97,6 @@ header {
     background-color: $black-cs;
     z-index: 2;
 
-    nav ul {
-        display: flex;
-        align-items: center;
-        gap: 45px;
-        list-style-type: none;
-
-
-        .active {
-            color: $orange-cs;
-        }
-    }
-
-    nav a {
-        font-size: 15px;
-        text-decoration: none;
-        font-weight: 700;
-        line-height: 24px;
-        cursor: pointer;
-    }
-
-    #search-icon {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(304deg) brightness(102%) contrast(103%);
-    }
 }
 
 #right-header {
@@ -138,9 +104,6 @@ header {
     align-items: center;
     gap: 30px;
 
-    #search-icon {
-        padding: 0 1rem;
-    }
 }
 
 #jumbotron {
@@ -248,38 +211,6 @@ header {
     align-items: center;
     justify-content: center;
     transform: translateY(-180px);
-
-    .black-card {
-        background-color: #121212;
-        text-align: center;
-        justify-content: space-between;
-        padding: 5rem 3rem;
-        margin: 0 1rem;
-        flex-basis: calc(100% /3);
-
-
-        h2 {
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: .8rem;
-        }
-
-        .icons {
-            height: 106px;
-            filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(91deg) brightness(103%) contrast(101%);
-            margin-bottom: 2rem;
-        }
-
-        p {
-            font-family: OpenSans, sans-serif;
-            font-size: 15px;
-            font-weight: normal;
-            text-transform: capitalize;
-        }
-
-
-    }
-
 
 }
 </style>
