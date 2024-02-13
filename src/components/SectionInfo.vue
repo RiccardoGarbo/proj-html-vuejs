@@ -1,6 +1,8 @@
 <script>
+import ImgsRow from '../ImgsRow.vue';
 export default {
     name: "SectionInfo",
+    components: { ImgsRow },
     data: () => ({
         infoDown: [
             {
@@ -53,6 +55,7 @@ export default {
             </div>
         </div>
     </div>
+    <ImgsRow />
 </template>
 
 <style lang="scss" scoped >
