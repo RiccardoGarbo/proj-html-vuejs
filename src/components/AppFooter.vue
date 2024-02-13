@@ -14,8 +14,8 @@ export default {
         <!-- component for footer menus -->
         <FooterMenus />
         <!-- component for footer rights -->
-        <FooterRights />
     </div>
+    <FooterRights />
 </template>
 
 <style>
