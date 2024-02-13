@@ -1,5 +1,5 @@
 <script>
-  export default {
+export default {
     name: 'HeaderCard',
     props: {
         card: Object
@@ -10,20 +10,22 @@
             return path.href
         }
     }
-  }
+}
 </script>
 
 <template>
     <div class="black-card">
-        <img :src="imagePath(card.img)" :alt="card.img" class="icons">
+        <figure>
+            <img :src="imagePath(card.img)" :alt="card.img" class="icons">
+        </figure>
         <h2>{{ card.heading }}</h2>
         <p>{{ card.text }}</p>
     </div>
 </template>
 
 <style lang='scss' scoped>
-
 @use '../../assets/scss/vars' as *;
+
 .black-card {
     background-color: #121212;
     text-align: center;
@@ -38,22 +40,64 @@
         margin-bottom: .8rem;
     }
 
-    .icons {
+    figure {
+        position: relative;
+        width: 106px;
         height: 106px;
-        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(91deg) brightness(103%) contrast(101%);
+        margin: 0 auto;
         margin-bottom: 2rem;
-        cursor: pointer;
 
-        &:hover {
-            filter: invert(52%) sepia(81%) saturate(1169%) hue-rotate(358deg) brightness(98%) contrast(93%);
+        &::after {
+            content: '';
+            border: 4px solid $orange-cs;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%,-50%);
+            z-index: 0;
+            display: none;
+            animation: soundwaveAnimation 1s linear  infinite
         }
     }
 
+    figure:hover::after {
+        display: block;
+    }
+    .icons {
+        height: 106px;
+        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(91deg) brightness(103%) contrast(101%);
+        
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+            filter: invert(52%) sepia(81%) saturate(1169%) hue-rotate(358deg) brightness(98%) contrast(93%);
+        } 
+    }
+    
     p {
         font-family: OpenSans, sans-serif;
         font-size: 15px;
         font-weight: normal;
         text-transform: capitalize;
+    }
+
+
+}
+
+@keyframes soundwaveAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
     }
 }
 </style>
