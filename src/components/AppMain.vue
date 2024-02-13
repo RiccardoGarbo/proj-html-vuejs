@@ -2,7 +2,6 @@
 import SectionVideo from './SectionVideo.vue';
 import SectionGallery from './SectionGallery.vue';
 import SectionInfo from './SectionInfo.vue';
-
 export default {
     name: "AppMain",
     components: { SectionVideo, SectionGallery, SectionInfo }
