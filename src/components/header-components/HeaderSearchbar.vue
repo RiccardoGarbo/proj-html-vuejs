@@ -119,14 +119,12 @@ export default {
       color: rgba(194, 194, 194, 0.295);
     }
   }
-  .delete-text {
+}
+.delete-text {
     filter: invert(41%) sepia(6%) saturate(5486%) hue-rotate(180deg) brightness(89%) contrast(89%);
     position: absolute;
     right: 70px;
     height: 20px;
   }
-}
-
-
 }
 </style>

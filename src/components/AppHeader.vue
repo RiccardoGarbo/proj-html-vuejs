@@ -88,7 +88,6 @@ header {
     gap: 30px;
 }
 
-
 .container {
     max-width: 1500px;
     margin: 0 auto;

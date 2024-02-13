@@ -10,6 +10,3 @@
     </figure>
 </template>
 
-<style lang='scss' scoped>
-  /* style here */
-</style>

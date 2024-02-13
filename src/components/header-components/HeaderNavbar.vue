@@ -37,6 +37,10 @@ export default {
                         <span>
                             <i class="fa-solid fa-chevron-right arrow-right" v-if="sublink.list"></i>
                         </span>
+                        <!-- da fare meglio -->
+                        <!-- <ul v-if="sublink.list" class="subsublist">
+                            <li v-for="subsublink in sublink.list"><a href="#">{{ subsublink.text }}</a></li>
+                        </ul> -->
                     </li>
                 </ul>
             </li>
@@ -52,7 +56,6 @@ nav ul {
     align-items: center;
     gap: 45px;
     list-style-type: none;
-
 
     .active {
         color: $orange-cs;
@@ -70,8 +73,6 @@ nav a {
     &:hover {
         color: $orange-cs;
     }
-
-
 }
 
 nav li {
@@ -93,9 +94,7 @@ span {
 }
 
 .arrow-down {
-
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(304deg) brightness(102%) contrast(103%);
-
     height: 15px;
     cursor: pointer;
 }
@@ -125,6 +124,22 @@ span {
     .arrow-right {
         font-size: .7rem;
     }
+    
+    .subsublist {
+        position: absolute;
+        background-color: #202020;
+        top: 0;
+        right: 100%;
+        width: 280px;
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+
+        li:not(:last-of-type) {
+            border-bottom: 1px solid rgba(128, 128, 128, 0.247);
+        }
+    }
 }
+
 
 </style>

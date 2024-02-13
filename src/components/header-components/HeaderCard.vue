@@ -69,7 +69,6 @@ export default {
     .icons {
         height: 106px;
         filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(91deg) brightness(103%) contrast(101%);
-        
         cursor: pointer;
         position: relative;
         z-index: 1;
@@ -85,8 +84,6 @@ export default {
         font-weight: normal;
         text-transform: capitalize;
     }
-
-
 }
 
 @keyframes soundwaveAnimation {
@@ -94,7 +91,6 @@ export default {
         transform: scale(1);
         opacity: 1;
     }
-
     100% {
         transform: scale(1.7);
         opacity: 0;

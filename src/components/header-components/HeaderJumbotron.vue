@@ -94,7 +94,6 @@ export default {
         transform: translate(-50%, -50%);
 
         p {
-
             padding: .8rem;
             font-weight: 500;
 
@@ -121,12 +120,12 @@ export default {
             margin-top: 1rem;
             transition: .2s ease-in;
             color: white;
+            text-transform: uppercase;
 
             &:hover {
                 background-color: $orange-cs;
             }
         }
-
     }
 }
 </style>
