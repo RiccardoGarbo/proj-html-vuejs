@@ -1,6 +1,8 @@
 <script>
 export default {
     name: 'FormComponent',
+    // declaring event form submit
+    emits: ['form-submit'],
     data() {
         return {
             // Initialize email and message data properties
@@ -16,8 +18,12 @@ export default {
                 email: this.email.trim(),
                 message: this.message.trim()
             };
-            // Log the form data to the console
-            console.log('Received data successfully:', formData);
+            // Emit the form data to the parent component (FooterMenus)
+            this.$emit('form-submit', formData);
+
+            // Reset form fields
+            this.email = '';
+            this.message = '';
         }
     }
 };
@@ -27,7 +33,6 @@ export default {
     <h2>NEWSLETTER</h2>
     <!-- Form element with submit event handler -->
     <form @submit.prevent="handleSubmit">
-        <!-- Form inputs -->
         <!-- Email input with v-model binding -->
         <input type="email" v-model="email" id="email" name="email" placeholder="Email" required>
         <!-- Textarea input with v-model binding -->

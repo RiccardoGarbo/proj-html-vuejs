@@ -1,6 +1,5 @@
 <script>
 import { footerAddresses, footerInfo, footerSupport } from '@/assets/data/data.js';
-
 import HorizontalList from './HorizontalList.vue';
 import HorizontalLinksMenu from './HorizontalLinksMenu.vue';
 import FormComponent from './FormComponent.vue';
@@ -9,13 +8,20 @@ import IconsWidget from './IconsWidget.vue'
 export default {
     name: 'FooterMenus',
     components: { HorizontalList, HorizontalLinksMenu, FormComponent, IconsWidget },
-    // Data properties initialized
+    // declaring event form submit
+    emits: ['form-submit'],
     data() {
         return {
             footerAddresses: footerAddresses,
             footerInfo: footerInfo,
             footerSupport: footerSupport
         };
+    },
+    methods: {
+        handleFormSubmit(formData) {
+            // Emit the form-submit event to the parent component AppFooter
+            this.$emit('form-submit', formData);
+        }
     }
 };
 </script>
@@ -35,12 +41,13 @@ export default {
                 <HorizontalLinksMenu :title="footerSupport.title" :items="footerSupport.items" />
             </div>
             <div class="col-form">
-                <FormComponent />
+                <!-- Send handleSubmit as a prop to the FormComponent component.-->
+                <FormComponent @form-submit="handleFormSubmit" />
             </div>
-
         </div>
     </div>
 </template>
+
 
 
 <style lang="scss" scoped>
