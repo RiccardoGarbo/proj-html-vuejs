@@ -6,7 +6,7 @@ export default {
     data() {
         return {
             headerNav,
-            cards: [
+            headerCards: [
                 {
                     img: 'speaker',
                     heading: 'Original ideas',
@@ -22,7 +22,9 @@ export default {
                     heading: 'Acoustic covers',
                     text: 'Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Random Text.'
                 },
-            ]
+            ],
+            currentImage: 0,
+            autoplay: null
         }
     },
     methods: {
@@ -30,6 +32,22 @@ export default {
             const path = new URL(`../assets/img/icon/${element}.svg`, import.meta.url);
             return path.href
         },
+        changeIndex() {
+            this.currentImage = this.currentImage === 0 ? 1 : 0;
+        },
+        changeImage() {
+            clearInterval(this.autoplay);
+            this.changeIndex()
+            this.autoplay()
+        },
+        startAutoplay() {
+            this.autoplay = setInterval(()=> {
+                this.changeIndex()
+            }, 4000)
+        }
+    },
+    created() {
+        this.startAutoplay()
     }
 };
 </script>
@@ -37,35 +55,45 @@ export default {
 <template>
     <header>
         <figure>
-            <img src="../assets/img/Logo.png" alt="">
+            <img src="../assets/img/Logo.png" alt="logo">
         </figure>
         <div id="right-header">
 
             <nav>
-                <!-- fare la classe active nei data -->
+                <!-- fare la classe active nei data, fare un altro component di questo e importare lì i data -->
                 <ul>
                     <li v-for="(link, i) in headerNav" :key="i"><a :href="link.url" :class="{ active: i === 0 }">{{
                         link.title }}</a></li>
                 </ul>
             </nav>
 
-            <div id="search-icon">icona</div>
+            <!-- fare un altro component anche di questo, l'immagine non si vede -->
+            <div id="search-icon"><img src="../assets/img/image (8).svg" alt="lente"></div>
         </div>
     </header>
 
+    <!-- fare un altro component anche di questo -->
     <figure id="jumbotron">
-        <img src="../assets/img/jumbotron img/image.png" alt="jumbotron">
-        <div id="jumbo-text">
+        <transition name="fade" mode="out-in">
+            <img v-if="currentImage === 0" src="../assets/img/jumbotron img/image.png" alt="jumbotron">
+            <img v-else src="../assets/img/jumbotron img/image (1).png" alt="jumbotron">
+        </transition>
+        <div class="jumbo-text">
             <p>Instrumental Rock</p>
-            <p>Music in this video</p>
+            <transition name="fade" mode="out-in">
+                <p v-if="currentImage === 0">Music of the spirit</p>
+                <p v-else>Music in this video</p>
+            </transition>
             <button type="button" class="main-btn">Read more</button>
         </div>
-        <div class="arrow-container left-arrow"><img src="../assets/img/left-arrow.svg" alt="left-arrow" class="arrow"></div>
-        <div class="arrow-container right-arrow"><img src="../assets/img/right-arrow.svg" alt="right-arrow" class="arrow"></div>
+        <div class="arrow-container left-arrow" @click="changeImage"><img src="../assets/img/left-arrow.svg" alt="left-arrow" class="arrow"></div>
+        <div class="arrow-container right-arrow" @click="changeImage"><img src="../assets/img/right-arrow.svg" alt="right-arrow" class="arrow"></div>
     </figure>
 
+
     <div id="card-container" class="container" >
-        <div class="black-card" v-for="card in cards">
+        <!-- fare un altro component anche di questo -->
+        <div class="black-card" v-for="card in headerCards">
             <img :src="imagePath(card.img)" :alt="card.img" class="icons">
             <h2>{{ card.heading }}</h2>
             <p>{{ card.text }}</p>
@@ -78,6 +106,7 @@ export default {
 @use '../assets/scss/vars' as *;
 
 * {
+    //da mettere nel body
     color: white;
     text-transform: uppercase;
 }
@@ -113,6 +142,10 @@ header {
         line-height: 24px;
         cursor: pointer;
     }
+
+    #search-icon {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(304deg) brightness(102%) contrast(103%);
+    }
 }
 
 #right-header {
@@ -134,6 +167,14 @@ header {
         opacity: 1;
     }
 
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity .5s ease-in;
+    }
+
+    .fade-enter, .fade-leave-to {
+        opacity: .5;
+    }
 
     img {
         width: 100%;
@@ -168,7 +209,7 @@ header {
         width: 7px;
     }
 
-    #jumbo-text {
+    .jumbo-text {
         position: absolute;
         top: 35%;
         left: 50%;
