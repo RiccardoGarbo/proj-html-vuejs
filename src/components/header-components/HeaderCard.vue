@@ -42,6 +42,11 @@
         height: 106px;
         filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(91deg) brightness(103%) contrast(101%);
         margin-bottom: 2rem;
+        cursor: pointer;
+
+        &:hover {
+            filter: invert(52%) sepia(81%) saturate(1169%) hue-rotate(358deg) brightness(98%) contrast(93%);
+        }
     }
 
     p {
