@@ -298,4 +298,4 @@ const footerSupport = {
     ]
 };
 
-export { headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport }
+export { headerCards, headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport }
