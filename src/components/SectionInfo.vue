@@ -1,10 +1,17 @@
 <script>
+import { buttonText } from '@/assets/data/data.js';
+import ButtonComponent from '@/components/ButtonComponent.vue';
+
 import { infoDown } from '../assets/data/data';
 export default {
     name: "SectionInfo",
-    data: () => ({
-        infoDown
-    }),
+    components: { ButtonComponent },
+    data() {
+        return {
+            infoDown,
+            buttonText: buttonText
+        }
+    },
     methods: {
         iconSrc(element) {
             const url = new URL(`../assets/img/image ${element}.svg`, import.meta.url);
@@ -21,7 +28,7 @@ export default {
         <div>
             <h2>INSTRUMENTAL ROCK</h2>
             <h1>ALBUM OUT NOW</h1>
-            <button>READ MORE</button>
+            <ButtonComponent :buttonText="buttonText.readMore" />
         </div>
     </div>
     <div id="down-info">
