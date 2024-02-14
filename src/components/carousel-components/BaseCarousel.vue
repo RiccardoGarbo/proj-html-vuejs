@@ -5,10 +5,9 @@ export default {
     data: () => ({
         step: '',
         carousel,
-        showedImage: []
+        showedImage: [],
     }),
     props: {
-        
         title: String,
         date: String,
         img: String,
@@ -27,39 +26,19 @@ export default {
             }
         })
         },
-        updateArray() {
-            this.showedImage.shift()
-            this.carousel.forEach((img) => {
-                    this.showedImage.push(img)
-            })
-        },
         moveImage(target) {
-            // this.updateArray();
             if (target === 'next') {
                 this.showedImage.shift()
                 this.carousel.forEach((img) => {
-                        this.showedImage.push(img)
+                    this.showedImage.push(img)
                 })
-            } else {
-                this.showedImage.pop()
-                this.carousel.forEach((img) => {
-                        this.showedImage.unshift(img)
-                })
-            }
-            
-        }
+            } 
+        },
     },
-    
     mounted() {
         this.fillArray()
-
-        
     }
-    
-
 }
-
-
 </script>
 
 <template>
@@ -87,11 +66,9 @@ export default {
                     </figcaption>
                 </div>
             </div>
-
             <button @click="moveImage('next')">
                 <img class="next" src="../../assets/img/right-arrow.svg" />
             </button>
-
         </div>
     </section>
 </template>
@@ -134,16 +111,12 @@ button {
     border: none;
     padding: 0;
     background: none;
-
-    
 }
-
 .next,
 .prev {
     width: 25px;
     height: 25px;
     color: #000000;
-
 }
 
 .card {
