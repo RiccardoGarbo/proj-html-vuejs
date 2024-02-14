@@ -165,7 +165,7 @@ const carousel = [
         img: 'music_business-worldwide.jpg',
         title: 'music business worldwide',
         date: '27 May 2022',
-        text: "Accelerate work and drive productivityThe Beatles' experimentation and creative freedom led other bands to experiment in various ways as well."
+        text: "Accelerate work and drive productivity The Beatles' experimentation and creative freedom led other bands to experiment in various ways as well."
     },
     {
         img: 'giveaways_rock.jpg',
@@ -173,30 +173,30 @@ const carousel = [
         date: '07 May 2022',
         text: 'Signs Your Car Battery Has To Be Replaced When the dashboard lights start flashing, this is a sign the battery is dying. Several issues arise and'
     },
-    {
-        img: 'drowned_in_sound_feel_joy.jpg',
-        title: 'drowned in sound feel joy',
-        date: '10 April 2022',
-        text: 'Different Types of Music Content For most music creators, they take their work very seriously because of the emotional attachment they may harbor'
-    },
-    {
-        img: 'dancing_astronaut_bounce_ipsum.jpg',
-        title: 'dancing astronaut bounce ipsum',
-        date: '01 March 2022',
-        text: 'Music Promotion Channels There are really a lot of music promotion channels out there. Being a music promotion channel involves a lot of work and'
-    },
-    {
-        img: 'consequence_of_sound_make_us.jpg',
-        title: 'consequence of sound make us',
-        date: '14 February 2022',
-        text: 'Electronic Dance Music Rhythm and Blues Before this, R &amp; B was known as ‘race music,’ a term that originated in the African American'
-    },
-    {
-        img: 'artist_development_and_production.jpg',
-        title: 'artist development and production',
-        date: '07 December 2021',
-        text: ' Characterised by its own beat patterns, the lyrics feature what is often extreme violence snd talk of criminal acts. As a result, there’s been'
-    },
+    // {
+    //     img: 'drowned_in_sound_feel_joy.jpg',
+    //     title: 'drowned in sound feel joy',
+    //     date: '10 April 2022',
+    //     text: 'Different Types of Music Content For most music creators, they take their work very seriously because of the emotional attachment they may harbor'
+    // },
+    // {
+    //     img: 'dancing_astronaut_bounce_ipsum.jpg',
+    //     title: 'dancing astronaut bounce ipsum',
+    //     date: '01 March 2022',
+    //     text: 'Music Promotion Channels There are really a lot of music promotion channels out there. Being a music promotion channel involves a lot of work and'
+    // },
+    // {
+    //     img: 'consequence_of_sound_make_us.jpg',
+    //     title: 'consequence of sound make us',
+    //     date: '14 February 2022',
+    //     text: 'Electronic Dance Music Rhythm and Blues Before this, R &amp; B was known as ‘race music,’ a term that originated in the African American'
+    // },
+    // {
+    //     img: 'artist_development_and_production.jpg',
+    //     title: 'artist development and production',
+    //     date: '07 December 2021',
+    //     text: ' Characterised by its own beat patterns, the lyrics feature what is often extreme violence snd talk of criminal acts. As a result, there’s been'
+    // },
 ]
 const instagramImages = [
     {
@@ -298,4 +298,27 @@ const footerSupport = {
     ]
 };
 
-export { headerCards, headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport }
+const infoDown = [
+    {
+        icon: '(13)',
+        number: 163,
+        text: 'CONCERT'
+    },
+    {
+        icon: '(14)',
+        number: 145,
+        text: 'HAPPY CLIENTS'
+    },
+    {
+        icon: '(15)',
+        number: 72,
+        text: 'MUSIC AWARDS'
+    },
+    {
+        icon: '(16)',
+        number: 1,
+        text: 'TOTAL SONGS'
+    }
+]
+
+export { headerCards, headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport, infoDown }

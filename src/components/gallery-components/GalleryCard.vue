@@ -56,7 +56,6 @@ span {
     i {
         color: $white-cs;
         text-decoration: none;
-        transition: color 0.3s ease;
         margin: 0 5px;
 
         &:hover {
@@ -72,6 +71,7 @@ figure {
     width: 447px;
     height: 415px;
     margin-bottom: 1rem;
+    cursor: pointer;
 
     img {
         transition: scale 0.7s ease;

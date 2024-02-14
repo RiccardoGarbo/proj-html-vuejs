@@ -3,7 +3,7 @@ import { carousel } from '../../assets/data/data.js'
 export default {
     name: 'BaseCarousel',
     data: () => ({
-        step: "",
+        step: '',
         carousel
     }),
     props: {
@@ -14,37 +14,39 @@ export default {
         text: String,
         infos: Array
     },
-
-
-    computed: {
-        isLastIndex() {
-            return this.infos.i === this.infos.length - 1;
-        },
-        isFirstIndex() {
-            return this.infos.i === 0;
-        },
-
-    },
     methods: {
         createPath(img) {
             const url = new URL(`../../assets/img/${img}`, import.meta.url)
             return url.href;
         },
-        setIndex(direction) {
-            if (direction === "next") {
-                if (this.isLastIndex) this.i = 0;
-                else this.i++;
-            } else if (direction === "prev") {
-                if (this.isFirstIndex) this.isLastIndex;
-                else this.i--;
-            } else {
-                this.i === direction;
-            }
-        },
-        setStep() {
-
-        }
     }
+
+
+    // computed: {
+    //     isLastIndex() {
+    //         return this.infos.i === this.infos.length - 1;
+    //     },
+    //     isFirstIndex() {
+    //         return this.infos.i === 0;
+    //     },
+
+    // },
+    
+    //     setIndex(direction) {
+    //         if (direction === "next") {
+    //             if (this.isLastIndex) this.i = 0;
+    //             else this.i++;
+    //         } else if (direction === "prev") {
+    //             if (this.isFirstIndex) this.isLastIndex;
+    //             else this.i--;
+    //         } else {
+    //             this.i === direction;
+    //         }
+    //     },
+    //     setStep() {
+
+    //     }
+    // }
 }
 
 
@@ -57,30 +59,27 @@ export default {
             <h2>BEST MUSIC BLOG</h2>
         </div>
         <div class="carousel">
-            <button @click="setIndex('prev')">
-                <img class="prev" src="../assets/img/left-arrow.svg" />
+            <button >
+                <img class="prev" src="../../assets/img/left-arrow.svg" />
             </button>
             <div class="wrapper">
-                <div class="card" v-for="(car, i) in carousel" :key="car.i">
+                <div class="card" v-for="card in carousel">
                     <figure>
-                        <!-- <img :src="createPath(carousel.img)" alt="info.title" /> -->
+                        <img :src="createPath(card.img)" :alt="card.title" />
                     </figure>
                     <figcaption>
-
-                        <h3 class="capital">{{ car.title }}</h3>
+                        <h3 class="capital">{{ card.title }}</h3>
                         <div class="icon-date">
                             <font-awesome-icon :icon="'far fa-calendar-days'" />
-                            <address>{{ car.date }}</address>
+                            <address>{{ card.date }}</address>
                         </div>
-
-                        <p>{{ car.text }}</p>
-
+                        <p class="description">{{ card.text }}</p>
                     </figcaption>
                 </div>
             </div>
 
-            <button @click="setIndex('next')">
-                <img class="next" src="../assets/img/right-arrow.svg" />
+            <button>
+                <img class="next" src="../../assets/img/right-arrow.svg" />
             </button>
 
         </div>
@@ -88,6 +87,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+*:not(img) {
+    padding: .2rem 0;
+}
+
+#music-blog {
+    padding: 6rem 0 8rem 0;
+}
 .titles {
     display: flex;
     flex-direction: column;
@@ -96,44 +103,64 @@ export default {
 }
 
 .carousel {
-    width: 1320px;
-    margin: 0 -10px;
+    width: 1500px;
+    margin: 0 auto;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
+.wrapper {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    
+}
 
 button {
     cursor: pointer;
     border: none;
     padding: 0;
     background: none;
+
+    
 }
 
 .next,
 .prev {
-    width: 10px;
-    height: 10px;
+    width: 25px;
+    height: 25px;
     color: #000000;
 
 }
 
 .card {
     padding: 0 10px;
-    flex-basis: 40px;
-    display: inline-flex;
-    flex-direction: column;
+    flex-basis: calc(100/3);
+}
+
+figure {
+    overflow: hidden;
+    width: 450px;
+    height: 301px;
+    cursor: pointer;
 }
 
 figure img {
     max-width: 100%;
     display: block;
+    transition: .5s ease;
+
+    &:hover {
+        scale: 1.1;
+    }
 }
 
 .capital {
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .icon-date {
@@ -170,7 +197,10 @@ figcaption h3 {
     font-size: 26px;
 }
 
-p {
-    color: white;
+.description {
+    color:  Rgb(204, 204, 204);
+    font-size: 15px;
+    line-height: 28.5px;
+    font-family: Sans-Serif;
 }
 </style>

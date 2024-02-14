@@ -32,6 +32,7 @@ section {
         overflow: hidden;
         width: 237px;
         height: 238px;
+        cursor: pointer;
 
         img {
             transition: scale 0.7s ease;
