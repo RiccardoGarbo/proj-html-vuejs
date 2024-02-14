@@ -1,7 +1,15 @@
 <script>
+import { buttonText } from '@/assets/data/data.js';
+import ButtonComponent from '@/components/ButtonComponent.vue';
 
 export default {
     name: "SectionVideo",
+    components: { ButtonComponent },
+    data() {
+        return {
+            buttonText: buttonText
+        }
+    }
 };
 </script>
 
@@ -14,7 +22,7 @@ export default {
             Organization Located In Vancouver, British Columbia, The Society, From The Very Beginning, Has Worked Diligently
             To Establish Vancouver As A Centre For The Creation And Exchange Of Sounds And Ideas Between The Local,
             National And International Music Communities</p>
-        <button>READ MORE</button>
+        <ButtonComponent :buttonText="buttonText.readMore" />
     </section>
     <section id="video">
         <font-awesome-icon :icon="'far fa-circle-play'" />
