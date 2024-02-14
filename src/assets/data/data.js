@@ -321,4 +321,15 @@ const infoDown = [
     }
 ]
 
-export { headerCards, headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport, infoDown }
+const buttonText = {
+    sendMessage: {
+        label: 'send message',
+        type: 'submit'
+    },
+    readMore: {
+        label: 'read more',
+        type: 'button'
+    }
+};
+
+export { buttonText, headerCards, headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport, infoDown }

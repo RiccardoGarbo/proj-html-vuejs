@@ -1,11 +1,20 @@
 <script>
+import { buttonText } from '@/assets/data/data.js';
+import ButtonComponent from '@/components/ButtonComponent.vue';
+
 export default {
     name: 'HeaderJumbotron',
+    components: { ButtonComponent },
+    data() {
+        return {
+            buttonText: buttonText
+        }
+    },
     props: {
         index: Number
     },
     emits: ['on-arrow-click'],
-    
+
 }
 </script>
 
@@ -21,7 +30,7 @@ export default {
                 <p v-if="index === 0">Music of the spirit</p>
                 <p v-else>Music in this video</p>
             </transition>
-            <button type="button" class="main-btn">Read more</button>
+            <ButtonComponent :buttonText="buttonText.readMore" />
         </div>
         <div class="arrow-container left-arrow" @click="$emit('on-arrow-click')">
             <img src="../../assets/img/left-arrow.svg" alt="left-arrow" class="arrow">
@@ -107,23 +116,6 @@ export default {
             &:nth-of-type(2) {
                 font-size: 100px;
                 line-height: 120px;
-            }
-        }
-
-        button {
-            padding: 15px 60px;
-            border: 1px solid $orange-cs;
-            background-color: transparent;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: 500;
-            margin-top: 1rem;
-            transition: .2s ease-in;
-            color: white;
-            text-transform: uppercase;
-
-            &:hover {
-                background-color: $orange-cs;
             }
         }
     }
