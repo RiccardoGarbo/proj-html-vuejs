@@ -21,32 +21,6 @@ export default {
         },
     }
 
-
-    // computed: {
-    //     isLastIndex() {
-    //         return this.infos.i === this.infos.length - 1;
-    //     },
-    //     isFirstIndex() {
-    //         return this.infos.i === 0;
-    //     },
-
-    // },
-    
-    //     setIndex(direction) {
-    //         if (direction === "next") {
-    //             if (this.isLastIndex) this.i = 0;
-    //             else this.i++;
-    //         } else if (direction === "prev") {
-    //             if (this.isFirstIndex) this.isLastIndex;
-    //             else this.i--;
-    //         } else {
-    //             this.i === direction;
-    //         }
-    //     },
-    //     setStep() {
-
-    //     }
-    // }
 }
 
 
