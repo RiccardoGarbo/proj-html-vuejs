@@ -6,15 +6,16 @@ export default {
         span: String,
     },
     computed: {
-        image() {
-            const url = new URL(`../assets/img/${this.gal.img}`, import.meta.url);
-            console.log(url.href);
-            return url.href;
-        },
-
         upperText() {
             return this.gal.text.toUpperCase();
         }
+    },
+
+    methods: {
+        imgPath(img) {
+            const url = new URL(`../../assets/img/${img}`, import.meta.url);
+            return url.href;
+        },
     }
 };
 </script>
@@ -22,7 +23,7 @@ export default {
 <template>
     <div class="gallery-card">
         <div class="text">
-            <img :src="image" :alt="gal.text">
+            <img :src="imgPath(gal.img)" :alt="gal.text">
             <h4>{{ upperText }}</h4>
         </div>
         <div class="icons">

@@ -1,6 +1,6 @@
 <script>
 import SectionVideo from './SectionVideo.vue';
-import SectionGallery from './SectionGallery.vue';
+import SectionGallery from './gallery-components/SectionGallery.vue'
 import SectionInfo from './SectionInfo.vue';
 
 export default {
