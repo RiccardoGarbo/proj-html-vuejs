@@ -1,5 +1,5 @@
 <script>
-import { gallery } from '../../src/assets/data/data.js'
+import { gallery } from '../../assets/data/data.js'
 import GalleryCard from './GalleryCard.vue'
 export default {
     name: "SectionGallery",
@@ -29,7 +29,7 @@ export default {
 </template>
 
 <style lang="scss" scoped >
-@use '../assets/scss/vars' as *;
+@use '../../assets/scss/vars' as *;
 
 #gallery {
     color: white;
@@ -51,7 +51,7 @@ export default {
 .gallery-base {
     max-width: 1500px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 100px 0;
 }
 
 .col {
