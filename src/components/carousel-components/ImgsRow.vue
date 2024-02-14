@@ -4,20 +4,42 @@ export default {
     name: 'ImgsRow',
     data: () => ({
         instagramImages,
-        currentIndex: 1
+        slidingDistance: -239,
+        showedImage: [],
+        currentLastImage: 7
     }),
     methods: {
         imgSrc(element) {
             const url = new URL(`../../assets/img/${element}`, import.meta.url);
             return url.href
         },
+        fillArray() {
+            this.instagramImages.forEach((img) => {
+                if (this.showedImage.length < 10) {
+                    this.showedImage.push(img)
+                }
+            })
+        },
+        updateArray() {
+            this.showedImage.shift()
+            this.instagramImages.forEach((img) => {
+                    this.showedImage.push(img)
+            })
+        }
        
     },
+    mounted() {
+        this.fillArray()
+
+        setInterval(() => {
+            this.updateArray();
+        }, 3000);
+    }
 }
 </script>
 <template>
-    <section>
-        <div v-for="img in instagramImages" :key="img.id">
+    <section class="imageContainer" ref="imageContainer">
+        <div v-for="img in showedImage" :key="img.i" >
             <figure>
                 <img :src="imgSrc(img.img)" alt="singer img">
             </figure>
@@ -25,10 +47,11 @@ export default {
     </section>
 </template>
 <style lang="scss" scoped>
-section {
-    overflow-x: hidden;
+.imageContainer {
+    white-space: nowrap;
+    overflow: hidden;
     display: flex;
-    // transform: translateX(-239px);
+    transition: transform 1s ease-in-out;
 
     figure {
         overflow: hidden;
@@ -47,4 +70,6 @@ section {
 img:hover {
     scale: 1.1;
 }
-</style>
+
+
+</style> 
