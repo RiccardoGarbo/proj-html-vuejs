@@ -1,5 +1,5 @@
 <script>
-import ImgsRow from '../ImgsRow.vue';
+import ImgsRow from './ImgsRow.vue';
 export default {
     name: "SectionInfo",
     components: { ImgsRow },
@@ -91,6 +91,7 @@ export default {
         color: white;
         transition: background-color 0.5s;
         margin-top: 2rem;
+        cursor: pointer;
 
 
     }
