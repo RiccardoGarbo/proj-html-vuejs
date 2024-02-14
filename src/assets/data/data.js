@@ -298,6 +298,29 @@ const footerSupport = {
     ]
 };
 
+const infoDown = [
+    {
+        icon: '(13)',
+        number: 163,
+        text: 'CONCERT'
+    },
+    {
+        icon: '(14)',
+        number: 145,
+        text: 'HAPPY CLIENTS'
+    },
+    {
+        icon: '(15)',
+        number: 72,
+        text: 'MUSIC AWARDS'
+    },
+    {
+        icon: '(16)',
+        number: 1,
+        text: 'TOTAL SONGS'
+    }
+]
+
 const buttonText = {
     sendMessage: {
         label: 'send message',
@@ -309,4 +332,4 @@ const buttonText = {
     }
 };
 
-export { buttonText, headerCards, headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport }
+export { buttonText, headerCards, headerNav, gallery, carousel, instagramImages, footerAddresses, footerInfo, footerSupport, infoDown }
