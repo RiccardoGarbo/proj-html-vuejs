@@ -1,17 +1,12 @@
 <script>
+import {carousel} from '../assets/data/data.js'
 export default {
     name: 'BaseCarousel',
     data: () => ({
-        step:""
+        step:"",
+        carousel
     }),
-    props: {
-        
-        title: String,
-        date: String,
-        img: String,
-        text: String,
-        infos: Array
-    },
+    
     computed:{
         isLastIndex() {
             return this.infos.i === this.infos.length -1;
@@ -23,7 +18,7 @@ export default {
     },
     methods: {
         createPath(img) {
-            const url = new URL(`../assets/img/${this.img}`, import.meta.url)
+            const url = new URL(`../assets/img/${img}`, import.meta.url)
             return img.href;
         },
         setIndex(direction) {
@@ -59,7 +54,7 @@ export default {
             <div class="wrapper">
                 <div class="card" v-for="(info, i) in infos" :key="info.key" >
                     <figure>
-                        <img :src="createPath(info.img)" alt="info.title"/>
+                        <img :src="createPath(carousel.img)" alt="info.title"/>
                         </figure>
                     <figcaption>
 
