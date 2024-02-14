@@ -4,7 +4,8 @@ export default {
     name: 'BaseCarousel',
     data: () => ({
         step: '',
-        carousel
+        carousel,
+        showedImage: []
     }),
     props: {
         
@@ -19,7 +20,42 @@ export default {
             const url = new URL(`../../assets/img/${img}`, import.meta.url)
             return url.href;
         },
+        fillArray() {
+        this.carousel.forEach((img) => {
+            if (this.showedImage.length < 10) {
+                this.showedImage.push(img)
+            }
+        })
+        },
+        updateArray() {
+            this.showedImage.shift()
+            this.carousel.forEach((img) => {
+                    this.showedImage.push(img)
+            })
+        },
+        moveImage(target) {
+            // this.updateArray();
+            if (target === 'next') {
+                this.showedImage.shift()
+                this.carousel.forEach((img) => {
+                        this.showedImage.push(img)
+                })
+            } else {
+                this.showedImage.pop()
+                this.carousel.forEach((img) => {
+                        this.showedImage.unshift(img)
+                })
+            }
+            
+        }
+    },
+    
+    mounted() {
+        this.fillArray()
+
+        
     }
+    
 
 }
 
@@ -33,11 +69,11 @@ export default {
             <h2>BEST MUSIC BLOG</h2>
         </div>
         <div class="carousel">
-            <button >
+            <button @click="moveImage('next')">
                 <img class="prev" src="../../assets/img/left-arrow.svg" />
             </button>
             <div class="wrapper">
-                <div class="card" v-for="card in carousel">
+                <div class="card" v-for="card in showedImage">
                     <figure>
                         <img :src="createPath(card.img)" :alt="card.title" />
                     </figure>
@@ -52,7 +88,7 @@ export default {
                 </div>
             </div>
 
-            <button>
+            <button @click="moveImage('next')">
                 <img class="next" src="../../assets/img/right-arrow.svg" />
             </button>
 
