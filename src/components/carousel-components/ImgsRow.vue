@@ -25,12 +25,14 @@ export default {
 </template>
 <style lang="scss" scoped>
 section {
+    overflow-x: hidden;
     display: flex;
 
     figure {
         overflow: hidden;
         width: 237px;
         height: 238px;
+        cursor: pointer;
 
         img {
             transition: scale 0.7s ease;

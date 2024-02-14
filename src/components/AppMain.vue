@@ -5,7 +5,7 @@ import SectionGallery from './gallery-components/SectionGallery.vue'
 import SectionInfo from './SectionInfo.vue';
 export default {
     name: "AppMain",
-    components: { SectionVideo, SectionGallery, SectionInfo, SectionCarousel }
+    components: { SectionVideo, SectionGallery, SectionInfo, SectionCarousel}
 };
 </script>
 

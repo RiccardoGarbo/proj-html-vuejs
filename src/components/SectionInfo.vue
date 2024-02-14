@@ -1,29 +1,9 @@
 <script>
+import { infoDown } from '../assets/data/data';
 export default {
     name: "SectionInfo",
     data: () => ({
-        infoDown: [
-            {
-                icon: '(13)',
-                number: 163,
-                text: 'CONCERT'
-            },
-            {
-                icon: '(14)',
-                number: 145,
-                text: 'HAPPY CLIENTS'
-            },
-            {
-                icon: '(15)',
-                number: 72,
-                text: 'MUSIC AWARDS'
-            },
-            {
-                icon: '(16)',
-                number: 1,
-                text: 'TOTAL SONGS'
-            }
-        ]
+        infoDown
     }),
     methods: {
         iconSrc(element) {
@@ -66,7 +46,7 @@ export default {
     font-size: 6rem
 }
 
-;
+
 
 #top-info {
     background-image: url('../assets/img/cms_parallax.jpg');
@@ -125,7 +105,7 @@ export default {
             }
 
             h2 {
-                font-size: 2rem;
+                font-size: 24px;
 
             }
 
