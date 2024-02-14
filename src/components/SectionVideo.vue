@@ -1,12 +1,7 @@
 <script>
-import {carousel} from '@/assets/data/data.js'
 
 export default {
     name: "SectionVideo",
-    components: {BaseCarousel},
-    data: () => ({
-        carousel
-    })
 };
 </script>
 
@@ -15,24 +10,20 @@ export default {
         <h5>WHO WE ARE</h5>
         <h2>SENSE THE JAZZ</h2>
         <p>The Story Of Jazz And Blues is the The Story Of Determination, Passion, Idealism, Community, And Of Course,
-        Music. Founded In 1985 And Incorporated In 1986, As A Community Based, Not-For-Profit, Charitable Arts
-        Organization Located In Vancouver, British Columbia, The Society, From The Very Beginning, Has Worked Diligently
-        To Establish Vancouver As A Centre For The Creation And Exchange Of Sounds And Ideas Between The Local,
-        National And International Music Communities</p>
+            Music. Founded In 1985 And Incorporated In 1986, As A Community Based, Not-For-Profit, Charitable Arts
+            Organization Located In Vancouver, British Columbia, The Society, From The Very Beginning, Has Worked Diligently
+            To Establish Vancouver As A Centre For The Creation And Exchange Of Sounds And Ideas Between The Local,
+            National And International Music Communities</p>
         <button>READ MORE</button>
     </section>
     <section id="video">
         <font-awesome-icon :icon="'far fa-circle-play'" />
         <h2>NEW MUSIC VIDEO</h2>
-    </section> 
-    
-    
-   
+    </section>
 </template>
 
 <style lang="scss" scoped >
-
-#jazz{
+#jazz {
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -42,52 +33,51 @@ export default {
     margin: 0 auto;
 }
 
-h5{
-color: #f2870c;
-text-align: center;
+h5 {
+    color: #f2870c;
+    text-align: center;
 }
 
-h2, 
+h2,
 p {
-color: #ffffff;
-text-align: center;
+    color: #ffffff;
+    text-align: center;
 }
 
 
 
-button{
-padding: 10px 50px;
-background-color: transparent;
-color: #ffffff;
-border: 1px solid #f2870c;
-margin-top: 30px;
+button {
+    padding: 10px 50px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #f2870c;
+    margin-top: 30px;
 }
 
-button:hover{
-background-color: #f2870c;
+button:hover {
+    background-color: #f2870c;
 }
 
-#video{
-height: 600px;
-background-image: url(../assets/img/Video-1024x361.jpg);
-background-repeat: no-repeat;
-background-size: contain;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-gap: 20px;
+#video {
+    height: 600px;
+    background-image: url(../assets/img/Video-1024x361.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 
 }
-h2{
+
+h2 {
     font-size: 60px;
 }
 
-.fa-circle-play{
+.fa-circle-play {
     font-size: 80px;
     color: #f2870c;
     font-weight: 100;
 }
-
-
 </style>

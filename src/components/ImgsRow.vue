@@ -23,7 +23,7 @@ export default {
         </div>
     </section>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 section {
     display: flex;
 
