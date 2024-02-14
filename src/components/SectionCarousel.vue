@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <BaseCarousel />
+    <!-- <BaseCarousel /> -->
     <ImgsRow />
 </template>
 

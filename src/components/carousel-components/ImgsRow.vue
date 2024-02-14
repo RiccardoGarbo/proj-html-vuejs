@@ -7,7 +7,7 @@ export default {
     }),
     methods: {
         imgSrc(element) {
-            const url = new URL(`../assets/img/${element}`, import.meta.url);
+            const url = new URL(`../../assets/img/${element}`, import.meta.url);
             return url.href
         }
     }
