@@ -3,9 +3,10 @@ import App from './App.vue'
 import '@fontsource-variable/oswald';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCirclePlay } from '@fortawesome/free-regular-svg-icons'
+import { faCalendarDays } from '@fortawesome/free-regular-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faCirclePlay);
+library.add(faCirclePlay, faCalendarDays);
 
 
 const app = createApp(App);
