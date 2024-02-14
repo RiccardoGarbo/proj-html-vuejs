@@ -37,10 +37,6 @@ export default {
                         <span>
                             <i class="fa-solid fa-chevron-right arrow-right" v-if="sublink.list"></i>
                         </span>
-                        <!-- da fare meglio -->
-                        <!-- <ul v-if="sublink.list" class="subsublist">
-                            <li v-for="subsublink in sublink.list"><a href="#">{{ subsublink.text }}</a></li>
-                        </ul> -->
                     </li>
                 </ul>
             </li>
