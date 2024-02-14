@@ -1,6 +1,6 @@
 <script>
 import {carousel} from '@/assets/data/data.js'
-import BaseCarousel from './BaseCarousel.vue'
+
 export default {
     name: "SectionVideo",
     components: {BaseCarousel},
@@ -26,9 +26,7 @@ export default {
         <h2>NEW MUSIC VIDEO</h2>
     </section> 
     
-    <section>
-        <BaseCarousel :title="carousel.title" :date="carousel.date" :img="carousel.img" :text="carousel.text" :infos="carousel" />
-    </section>
+    
    
 </template>
 
