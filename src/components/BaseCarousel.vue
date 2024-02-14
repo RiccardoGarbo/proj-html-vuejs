@@ -1,9 +1,175 @@
 <script>
 export default {
-    name: 'BaseCarousel'
+    name: 'BaseCarousel',
+    data: () => ({
+        step:""
+    }),
+    props: {
+        
+        title: String,
+        date: String,
+        img: String,
+        text: String,
+        infos: Array
+    },
+    computed:{
+        isLastIndex() {
+            return this.infos.i === this.infos.length -1;
+        },
+        isFirstIndex() {
+            return this.infos.i === 0;
+        },
+
+    },
+    methods: {
+        createPath(img) {
+            const url = new URL(`../assets/img/${this.img}`, import.meta.url)
+            return img.href;
+        },
+        setIndex(direction) {
+            if (direction === "next"){
+                if (this.isLastIndex) this.i = 0;
+                else this.i++;
+            } else if (direction === "prev") {
+                if(this.isFirstIndex) this.isLastIndex;
+                else this.i--;
+            } else {
+                this.i === direction;
+            }
+        },
+        setStep() {
+
+        } 
+    }
 }
+    
+
 </script>
 
 <template>
+    <section id="music-blog">
+        <div class="titles">
+            <h5>MUSIC BLOG</h5>
+            <h2>BEST MUSIC BLOG</h2>
+        </div>
+        <div class="carousel">
+            <button @click="setIndex('prev')">
+                <img class="prev" src="../assets/img/left-arrow.svg" />
+            </button>
+            <div class="wrapper">
+                <div class="card" v-for="(info, i) in infos" :key="info.key" >
+                    <figure>
+                        <img :src="createPath(info.img)" alt="info.title"/>
+                        </figure>
+                    <figcaption>
+
+                        <h3 class="capital">{{ info.title }}</h3>
+                        <div class="icon-date">
+                            <font-awesome-icon :icon="'far fa-calendar-days'" />
+                            <address>{{ info.date }}</address>
+                        </div>
+
+                        <p>{{ info.text }}</p>
+
+                    </figcaption>
+                </div>
+            </div>
+            
+            <button @click="setIndex('next')">
+                <img class="next" src="../assets/img/right-arrow.svg" />
+            </button>
     
+        </div>
+    </section>
+
 </template>
+
+<style lang="scss" scoped>
+.titles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel{
+    width: 1320px;
+    margin: 0 -10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .wrapper{
+    white-space: nowrap;
+} */
+
+button{
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: none;
+}
+
+.next,
+.prev{
+    width: 10px;
+    height: 10px;
+    color: #000000;
+    
+}
+
+.card {
+    padding: 0 10px;
+    flex-basis: 40px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+figure img{
+    max-width: 100%;
+    display: block;
+}
+.capital{
+    text-transform: uppercase;
+}
+
+.icon-date{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h5,
+address,
+.fa-calendar-days{
+    color: #f2870c;
+}
+
+address{
+    font-style: normal;
+}
+
+h2,
+h3{
+    color: #ffffff;
+}
+
+h3:hover{
+    color: #f2870c;
+    
+}
+
+h2{
+    font-size: 60px;
+}
+
+figcaption h3{
+    font-size: 26px;
+}
+
+p{
+    color: white;
+}
+</style>

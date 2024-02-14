@@ -1,8 +1,12 @@
 <script>
-
+import {carousel} from '@/assets/data/data.js'
+import BaseCarousel from './BaseCarousel.vue'
 export default {
     name: "SectionVideo",
-   
+    components: {BaseCarousel},
+    data: () => ({
+        carousel
+    })
 };
 </script>
 
@@ -11,7 +15,7 @@ export default {
         <h5>WHO WE ARE</h5>
         <h2>SENSE THE JAZZ</h2>
         <p>The Story Of Jazz And Blues is the The Story Of Determination, Passion, Idealism, Community, And Of Course,
-        Music. Founded In 1985 And Incorporated In 1986, As A Community Based, Not-Fro-Profit, Charitable Arts
+        Music. Founded In 1985 And Incorporated In 1986, As A Community Based, Not-For-Profit, Charitable Arts
         Organization Located In Vancouver, British Columbia, The Society, From The Very Beginning, Has Worked Diligently
         To Establish Vancouver As A Centre For The Creation And Exchange Of Sounds And Ideas Between The Local,
         National And International Music Communities</p>
@@ -22,7 +26,9 @@ export default {
         <h2>NEW MUSIC VIDEO</h2>
     </section> 
     
-
+    <section>
+        <BaseCarousel :title="carousel.title" :date="carousel.date" :img="carousel.img" :text="carousel.text" :infos="carousel" />
+    </section>
    
 </template>
 
@@ -65,7 +71,7 @@ background-color: #f2870c;
 
 #video{
 height: 600px;
-background-image: url(../assets/img/Video-600x211.jpg);
+background-image: url(../assets/img/Video-1024x361.jpg);
 background-repeat: no-repeat;
 background-size: contain;
 display: flex;
