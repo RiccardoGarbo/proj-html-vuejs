@@ -1,13 +1,17 @@
 <script>
+import { buttonText } from '@/assets/data/data.js';
+import ButtonComponent from '@/components/ButtonComponent.vue';
+
 export default {
     name: 'FormComponent',
-    // declaring event form submit
     emits: ['form-submit'],
+    components: { ButtonComponent },
     data() {
         return {
             // Initialize email and message data properties
             email: '',
-            message: ''
+            message: '',
+            buttonText: buttonText
         };
     },
     methods: {
@@ -39,7 +43,7 @@ export default {
         <textarea v-model="message" id="message" name="message" placeholder="Message" rows="4" cols="50"
             required></textarea>
         <!-- Submit button -->
-        <button type="submit">SEND MESSAGE</button>
+        <ButtonComponent :buttonText="buttonText.sendMessage" />
     </form>
 </template>
 
@@ -66,24 +70,5 @@ form textarea {
         outline: none;
         caret-color: #ffff;
     }
-}
-
-form button[type="submit"] {
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 24px;
-    letter-spacing: 1px;
-    border-radius: 0px;
-    padding: 12px 54px 12px 54px;
-    border: 1px solid $orange-cs;
-    background-color: transparent;
-    color: $white-cs;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-form button[type="submit"]:hover {
-    background-color: $orange-cs;
-    color: white;
 }
 </style>
