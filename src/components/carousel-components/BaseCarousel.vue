@@ -1,15 +1,15 @@
 <script>
-import {carousel} from '../assets/data/data.js'
+import { carousel } from '../../assets/data/data.js'
 export default {
     name: 'BaseCarousel',
     data: () => ({
-        step:"",
+        step: "",
         carousel
     }),
-    
-    computed:{
+
+    computed: {
         isLastIndex() {
-            return this.infos.i === this.infos.length -1;
+            return this.infos.i === this.infos.length - 1;
         },
         isFirstIndex() {
             return this.infos.i === 0;
@@ -22,11 +22,11 @@ export default {
             return img.href;
         },
         setIndex(direction) {
-            if (direction === "next"){
+            if (direction === "next") {
                 if (this.isLastIndex) this.i = 0;
                 else this.i++;
             } else if (direction === "prev") {
-                if(this.isFirstIndex) this.isLastIndex;
+                if (this.isFirstIndex) this.isLastIndex;
                 else this.i--;
             } else {
                 this.i === direction;
@@ -34,10 +34,10 @@ export default {
         },
         setStep() {
 
-        } 
+        }
     }
 }
-    
+
 
 </script>
 
@@ -52,10 +52,10 @@ export default {
                 <img class="prev" src="../assets/img/left-arrow.svg" />
             </button>
             <div class="wrapper">
-                <div class="card" v-for="(info, i) in infos" :key="info.key" >
+                <div class="card" v-for="(info, i) in infos" :key="info.key">
                     <figure>
-                        <img :src="createPath(carousel.img)" alt="info.title"/>
-                        </figure>
+                        <img :src="createPath(carousel.img)" alt="info.title" />
+                    </figure>
                     <figcaption>
 
                         <h3 class="capital">{{ info.title }}</h3>
@@ -69,25 +69,24 @@ export default {
                     </figcaption>
                 </div>
             </div>
-            
+
             <button @click="setIndex('next')">
                 <img class="next" src="../assets/img/right-arrow.svg" />
             </button>
-    
+
         </div>
     </section>
-
 </template>
 
 <style lang="scss" scoped>
-.titles{
+.titles {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.carousel{
+.carousel {
     width: 1320px;
     margin: 0 -10px;
     overflow: hidden;
@@ -100,7 +99,7 @@ export default {
     white-space: nowrap;
 } */
 
-button{
+button {
     cursor: pointer;
     border: none;
     padding: 0;
@@ -108,11 +107,11 @@ button{
 }
 
 .next,
-.prev{
+.prev {
     width: 10px;
     height: 10px;
     color: #000000;
-    
+
 }
 
 .card {
@@ -122,15 +121,16 @@ button{
     flex-direction: column;
 }
 
-figure img{
+figure img {
     max-width: 100%;
     display: block;
 }
-.capital{
+
+.capital {
     text-transform: uppercase;
 }
 
-.icon-date{
+.icon-date {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -138,33 +138,33 @@ figure img{
 
 h5,
 address,
-.fa-calendar-days{
+.fa-calendar-days {
     color: #f2870c;
 }
 
-address{
+address {
     font-style: normal;
 }
 
 h2,
-h3{
+h3 {
     color: #ffffff;
 }
 
-h3:hover{
+h3:hover {
     color: #f2870c;
-    
+
 }
 
-h2{
+h2 {
     font-size: 60px;
 }
 
-figcaption h3{
+figcaption h3 {
     font-size: 26px;
 }
 
-p{
+p {
     color: white;
 }
 </style>

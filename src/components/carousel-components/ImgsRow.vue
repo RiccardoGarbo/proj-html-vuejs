@@ -1,5 +1,5 @@
 <script>
-import { instagramImages } from '../assets/data/data'
+import { instagramImages } from '../../assets/data/data'
 export default {
     name: 'ImgsRow',
     data: () => ({
