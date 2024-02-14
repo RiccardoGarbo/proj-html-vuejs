@@ -29,6 +29,8 @@ export default {
         createPath(img) {
             const url = new URL(`../../assets/img/${img}`, import.meta.url)
             return url.href;
+            const url = new URL(`../assets/img/${img}`, import.meta.url)
+            return url.href;
         },
         setIndex(direction) {
             if (direction === "next") {
