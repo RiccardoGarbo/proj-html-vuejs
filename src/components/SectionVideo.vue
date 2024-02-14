@@ -24,13 +24,14 @@ export default {
 
 <style lang="scss" scoped >
 #jazz {
-    height: 500px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 660px;
     margin: 0 auto;
+    padding-bottom: 100px;
 }
 
 h5 {
@@ -62,12 +63,14 @@ button:hover {
     height: 600px;
     background-image: url(../assets/img/Video-1024x361.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    cursor: pointer;
 
 }
 

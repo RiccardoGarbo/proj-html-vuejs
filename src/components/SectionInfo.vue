@@ -55,6 +55,7 @@ export default {
             </div>
         </div>
     </div>
+    <BaseCarousel />
     <ImgsRow />
 </template>
 

@@ -16,7 +16,7 @@ export default {
             autoplay: null
         }
     },
-    components: {HeaderNavbar, HeaderSearchbar, HeaderLogo, HeaderCard, HeaderJumbotron},
+    components: { HeaderNavbar, HeaderSearchbar, HeaderLogo, HeaderCard, HeaderJumbotron },
     methods: {
         imagePath(element) {
             const path = new URL(`../assets/img/icon/${element}.svg`, import.meta.url);
@@ -45,20 +45,20 @@ export default {
 <template>
     <!-- header -->
     <header>
-        <HeaderLogo/>
+        <HeaderLogo />
 
         <div id="right-header">
-            <HeaderNavbar/>
+            <HeaderNavbar />
             <HeaderSearchbar />
         </div>
     </header>
 
     <!-- jumbotron -->
-    <HeaderJumbotron @on-arrow-click="changeImage" :index="currentImage"/>
+    <HeaderJumbotron @on-arrow-click="changeImage" :index="currentImage" />
 
     <!-- cards -->
     <div id="card-container" class="container">
-        <HeaderCard v-for="(card, i) in headerCards" :key="i" :card="card"/>
+        <HeaderCard v-for="(card, i) in headerCards" :key="i" :card="card" />
     </div>
 </template>
 
@@ -97,6 +97,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(-180px);
+    transform: translateY(-200px);
+    margin-bottom: -120px;
 }
 </style>
