@@ -25,6 +25,7 @@ export default {
 </template>
 <style lang="scss" scoped>
 section {
+    overflow-x: hidden;
     display: flex;
 
     figure {

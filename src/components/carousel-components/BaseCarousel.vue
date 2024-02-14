@@ -6,6 +6,15 @@ export default {
         step: "",
         carousel
     }),
+    props: {
+        
+        title: String,
+        date: String,
+        img: String,
+        text: String,
+        infos: Array
+    },
+
 
     computed: {
         isLastIndex() {
@@ -18,8 +27,8 @@ export default {
     },
     methods: {
         createPath(img) {
-            const url = new URL(`../assets/img/${img}`, import.meta.url)
-            return img.href;
+            const url = new URL(`../../assets/img/${img}`, import.meta.url)
+            return url.href;
         },
         setIndex(direction) {
             if (direction === "next") {
@@ -54,7 +63,7 @@ export default {
             <div class="wrapper">
                 <div class="card" v-for="(car, i) in carousel" :key="car.i">
                     <figure>
-                        <img :src="createPath(carousel.img)" alt="info.title" />
+                        <!-- <img :src="createPath(carousel.img)" alt="info.title" /> -->
                     </figure>
                     <figcaption>
 
@@ -95,9 +104,6 @@ export default {
     align-items: center;
 }
 
-/* .wrapper{
-    white-space: nowrap;
-} */
 
 button {
     cursor: pointer;
