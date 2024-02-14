@@ -52,19 +52,19 @@ export default {
                 <img class="prev" src="../assets/img/left-arrow.svg" />
             </button>
             <div class="wrapper">
-                <div class="card" v-for="(info, i) in infos" :key="info.key">
+                <div class="card" v-for="(car, i) in carousel" :key="car.i">
                     <figure>
                         <img :src="createPath(carousel.img)" alt="info.title" />
                     </figure>
                     <figcaption>
 
-                        <h3 class="capital">{{ info.title }}</h3>
+                        <h3 class="capital">{{ car.title }}</h3>
                         <div class="icon-date">
                             <font-awesome-icon :icon="'far fa-calendar-days'" />
-                            <address>{{ info.date }}</address>
+                            <address>{{ car.date }}</address>
                         </div>
 
-                        <p>{{ info.text }}</p>
+                        <p>{{ car.text }}</p>
 
                     </figcaption>
                 </div>
