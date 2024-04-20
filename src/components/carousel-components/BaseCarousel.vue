@@ -2,18 +2,49 @@
 import { carousel } from '../../assets/data/data.js'
 export default {
     name: 'BaseCarousel',
+<<<<<<< HEAD
    props:{
     infos: Array
    },
+=======
+    data: () => ({
+        step: '',
+        carousel,
+        showedImage: [],
+    }),
+    props: {
+        title: String,
+        date: String,
+        img: String,
+        text: String,
+        infos: Array
+    },
+>>>>>>> 24cb821a0a4e9a6da9685e0642e652bf5fb7db16
     methods: {
         createPath(img) {
             const url = new URL (`../../assets/img/${img}`, import.meta.url)
             return url.href;
         },
+        fillArray() {
+        this.carousel.forEach((img) => {
+            if (this.showedImage.length < 10) {
+                this.showedImage.push(img)
+            }
+        })
+        },
+        moveImage(target) {
+            if (target === 'next') {
+                this.showedImage.shift()
+                this.carousel.forEach((img) => {
+                    this.showedImage.push(img)
+                })
+            } 
+        },
+    },
+    mounted() {
+        this.fillArray()
     }
 }
-
-
 </script>
 
 <template>
@@ -23,11 +54,15 @@ export default {
             <h2>BEST MUSIC BLOG</h2>
         </div>
         <div class="carousel">
-            <button >
+            <button @click="moveImage('next')">
                 <img class="prev" src="../../assets/img/left-arrow.svg" />
             </button>
             <div class="wrapper">
+<<<<<<< HEAD
                 <div class="card" v-for="(info, i) in infos" :key="info.i">
+=======
+                <div class="card" v-for="card in showedImage">
+>>>>>>> 24cb821a0a4e9a6da9685e0642e652bf5fb7db16
                     <figure>
                         <img :src="createPath(info.img)" :alt="info.title" />
                     </figure>
@@ -41,11 +76,9 @@ export default {
                     </figcaption>
                 </div>
             </div>
-
-            <button>
+            <button @click="moveImage('next')">
                 <img class="next" src="../../assets/img/right-arrow.svg" />
             </button>
-
         </div>
     </section>
 </template>
@@ -88,16 +121,12 @@ button {
     border: none;
     padding: 0;
     background: none;
-
-    
 }
-
 .next,
 .prev {
     width: 25px;
     height: 25px;
     color: #000000;
-
 }
 
 .card {
