@@ -2,51 +2,15 @@
 import { carousel } from '../../assets/data/data.js'
 export default {
     name: 'BaseCarousel',
-    data: () => ({
-        step: '',
-        carousel
-    }),
-    props: {
-        
-        title: String,
-        date: String,
-        img: String,
-        text: String,
-        infos: Array
-    },
+   props:{
+    infos: Array
+   },
     methods: {
         createPath(img) {
-            const url = new URL(`../../assets/img/${img}`, import.meta.url)
+            const url = new URL (`../../assets/img/${img}`, import.meta.url)
             return url.href;
         },
     }
-
-
-    // computed: {
-    //     isLastIndex() {
-    //         return this.infos.i === this.infos.length - 1;
-    //     },
-    //     isFirstIndex() {
-    //         return this.infos.i === 0;
-    //     },
-
-    // },
-    
-    //     setIndex(direction) {
-    //         if (direction === "next") {
-    //             if (this.isLastIndex) this.i = 0;
-    //             else this.i++;
-    //         } else if (direction === "prev") {
-    //             if (this.isFirstIndex) this.isLastIndex;
-    //             else this.i--;
-    //         } else {
-    //             this.i === direction;
-    //         }
-    //     },
-    //     setStep() {
-
-    //     }
-    // }
 }
 
 
@@ -63,17 +27,17 @@ export default {
                 <img class="prev" src="../../assets/img/left-arrow.svg" />
             </button>
             <div class="wrapper">
-                <div class="card" v-for="card in carousel">
+                <div class="card" v-for="(info, i) in infos" :key="info.i">
                     <figure>
-                        <img :src="createPath(card.img)" :alt="card.title" />
+                        <img :src="createPath(info.img)" :alt="info.title" />
                     </figure>
                     <figcaption>
-                        <h3 class="capital">{{ card.title }}</h3>
+                        <h3 class="capital">{{ info.title }}</h3>
                         <div class="icon-date">
                             <font-awesome-icon :icon="'far fa-calendar-days'" />
-                            <address>{{ card.date }}</address>
+                            <address>{{ info.date }}</address>
                         </div>
-                        <p class="description">{{ card.text }}</p>
+                        <p class="description">{{ info.text }}</p>
                     </figcaption>
                 </div>
             </div>

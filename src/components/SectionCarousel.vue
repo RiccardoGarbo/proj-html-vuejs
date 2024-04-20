@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <BaseCarousel :title="carousel.title" :date="carousel.date" :img="carousel.img" :text="carousel.text" :infos="carousel"/>
+    <BaseCarousel  :infos="carousel"/>
     <ImgsRow />
 </template>
 
